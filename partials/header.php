@@ -39,7 +39,7 @@ include("partials/connect.php");
 							</li>
 
 							<li>
-								<a href="product.php">Shop</a>
+								<a href="product.php?page=1">Shop</a>
 							</li> 
 
 							<li>
@@ -111,7 +111,7 @@ include("partials/connect.php");
 				</li>
 
 				<li>
-					<a href="product.php">Shop</a>
+					<a href="product.php?">Shop</a>
 				</li>
 
 				<li>

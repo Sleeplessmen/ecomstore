@@ -1,3 +1,25 @@
+<?php
+include("partials/connect.php");
+// Set the number of products per page
+$productsPerPage = 20;
+
+// Get the current page number from the URL, default to page 1
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+// Calculate the offset for the SQL query
+$offset = ($page - 1) * $productsPerPage;
+
+// Query to get the total number of products
+$totalProducts = $connect->query("SELECT COUNT(*) as total FROM products")->fetch_assoc()['total'];
+
+// Calculate the total number of pages
+$totalPages = ceil($totalProducts / $productsPerPage);
+
+// Query to retrieve products with pagination
+$sql = "SELECT * FROM products LIMIT $offset, $productsPerPage";
+$result = $connect->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("partials/head.php") ?>
@@ -10,7 +32,7 @@
 	<br><br>
 
 	<!-- Product -->
-	<div class="bg0 m-t-23 p-b-140">
+	<div class="bg0 m-t-23 p-b-100">
 		<div class="container">
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
@@ -256,10 +278,6 @@
 
 			<div class="row isotope-grid">
 				<?php
-				include("partials/connect.php");
-				// show max 20
-				$sql = "SELECT * FROM products ORDER BY RAND() limit 20";
-				$result = $connect->query($sql);
 
 				while ($final = $result->fetch_assoc()) :
 				?>
@@ -268,14 +286,14 @@
 							<div class="block2-pic hov-img0">
 								<img src="<?php echo $final['productPicture']?>" alt="Product Image - <?php echo $final['productName']; ?>" style="max-height: 250px; max-width: 250px; margin-bottom: 5px;">
 
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								<a href="details.php?detail_id=<?php echo $final['productID'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 									Quick View
 								</a>
 							</div>
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l">
-									<a href="product-detail.php?id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="details.php?detail_id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										<?php echo $final['productName'] ?>
 									</a>
 
@@ -295,13 +313,15 @@
 					</div>
 				<?php endwhile; ?>
 			</div>
+		</div>
 
-			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
+		<!-- Pagination buttons -->
+		<div class="flex-c-m flex-w w-full">
+			<?php for ($i = 1; $i <= 4; $i++) : ?>
+				<a href="product.php?page=<?php echo $i; ?>" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04 <?php echo $i === $page ? 'active' : ''; ?>">
+					<?php echo $i; ?>
 				</a>
-			</div>
+			<?php endfor; ?>
 		</div>
 	</div>
 		
