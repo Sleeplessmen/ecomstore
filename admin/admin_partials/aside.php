@@ -34,7 +34,7 @@
         </li>
 
         <li>
-          <a href="products.php">
+          <a href="showproducts.php">
             <i class="fa fa-th"></i> <span>Product</span>
           </a>
         </li>

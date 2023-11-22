@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 include("admin_partials/head.php");
 
 if(isset($_POST['login'])) {
@@ -8,20 +10,21 @@ include("../partials/connect.php");
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql="select * from admins where adminUsername='$email' and adminPassword'$password'";
-$results=$connect->query($sql);
-$final=$results->fetch_assoc();
+$sql = "SELECT * FROM admins WHERE adminUsername='$email' AND adminPassword='$password'";
+    
+$result = $connect->query($sql);
+$final = $result->fetch_assoc();
 
 $_SESSION['email']=$final['adminUsername'];
 $_SESSION['password']=$final['adminPassword'];
 
-if (  $email == $final['adminUsername'] && $password == $final['adminPassword']) {
-    header('Location: admin_index.php');
-} 
-else {
-    header('Location: admin_login.php');
+if ($email=$final['adminUsername'] AND $password=$final['adminPassword']) {
+  header('Location: admin_index.php');  
+} else {
+  header('Location: admin_login.php');
 }
 }  
+
 ?>
 
 <div class="row">
@@ -36,14 +39,14 @@ else {
             <!-- /.box-header -->
              
             <!-- form start -->
-            <form class="form-horizontal" action="adminlogin.php" method="post">
+            <form class="form-horizontal" action="admin_login.php" method="post">
               <div class="box-body">
 
                 <div class="form-group">
                   <label for="email" class="col-sm-2 control-label">Email</label>
                   <div class="col-sm-10">
                     <input type="email" class="form-control" id="email" placeholder="Email" name="email">
-                  </div>
+                  </div> 
                 </div>
 
                 <div class="form-group">
@@ -67,8 +70,7 @@ else {
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                <button type="submit" class="btn btn-info pull-right" name="login">Sign in</button>
               </div>
               <!-- /.box-footer -->
             </form>

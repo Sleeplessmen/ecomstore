@@ -8,7 +8,7 @@ include("admin_partials/head.php");
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     
-    <!-- Header -->
+    <!-- Header -->  
     <?php include("admin_partials/header.php") ?>
 
     <!-- Aside -->
