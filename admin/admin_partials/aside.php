@@ -28,6 +28,12 @@
         <li class="header">MAIN NAVIGATION</li>
         
         <li>
+          <a href="admin_index.php">
+            <i class="fa fa-th"></i> <span>Home</span>
+          </a>
+        </li>
+
+        <li>
           <a href="categories.php">
             <i class="fa fa-th"></i> <span>Category</span>
           </a>

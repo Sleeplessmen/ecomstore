@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_query($connect, $query)) {
         echo "Category added successfully!";
+        header("Location: showproducts.php");
+        exit();
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($connect);
     }

@@ -19,19 +19,22 @@ include("admin_partials/head.php");
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>
+                 <h1>
                     Dashboard
                     <small>Control panel</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="admin_index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
+                    <li class="active"><a href="showproducts.php">Product</li>
                 </ol>
             </section>
 
             <!-- Main Content -->
             <section class="content">
+                <p><a href="products.php" class="btn btn-success">Add New Product</a><br></p>
+                <h3>Show All Products</h3>
                 <div class="row">
+                    
                     <?php
                     include('../partials/connect.php');
                     $sql = "SELECT * FROM products";
@@ -41,29 +44,23 @@ include("admin_partials/head.php");
 
                     while ($product = $result->fetch_assoc()) :
                     ?>
-
                         <div class="col-md-4">
-                            <div class="box">
-                                <div class="box-body">
-                                    <a href="showprods.php?id=<?php echo $product['productID'] ?>">
-                                        <h3><?php echo $product['productID'] ?>: <?php echo $product['productName'] ?></h3><br> 
-                                    </a>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $product['productID'] ?>: <?php echo $product['productName'] ?></h5>
 
-                                    <a href="updateprods.php?id=<?php echo $product['productID'] ?>">
-                                        <button class="btn btn-primary">Update</button>
-                                    </a>
-
-                                    <a href="deleteprods.php?id=<?php echo $product['productID'] ?>">
-                                        <button class="btn btn-danger">Delete</button>
-                                    </a>
-                                    <hr>
+                                    <div class="btn-group" role="group">
+                                        <a href="showprods.php?id=<?php echo $product['productID'] ?>" class="btn btn-info">View</a>
+                                        <a href="updateprods.php?id=<?php echo $product['productID'] ?>" class="btn btn-primary">Update</a>
+                                        <a href="deleteprods.php?id=<?php echo $product['productID'] ?>" class="btn btn-danger">Delete</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     <?php endwhile; ?>
+                
+            </div>
 
-                </div>
             </section>
             <!-- /.content -->
         </div>

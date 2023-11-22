@@ -9,13 +9,13 @@ include("partials/connect.php");
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Miễn phí vận chuyển cho toàn bộ đơn hàng trên 2.000.000đ
+						Free shipping for standard order over $100
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Tài khoản của tôi
+							My Account
 						</a>
 
 					</div>
@@ -26,7 +26,7 @@ include("partials/connect.php");
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
+					<a href="index.php" class="logo">
 						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
@@ -35,19 +35,19 @@ include("partials/connect.php");
 						<ul class="main-menu">
 							
 							<li>
-								<a href="index.php">Trang chủ</a>
+								<a href="index.php">Home</a>
 							</li>
 
 							<li>
-								<a href="product.php">Cửa hàng</a>
+								<a href="product.php">Shop</a>
 							</li> 
 
 							<li>
-								<a href="about.php">Về chúng tôi</a>
+								<a href="about.php">About</a>
 							</li>
 
 							<li>
-								<a href="contact.php">Liên hệ</a>
+								<a href="contact.php">Contact</a>
 							</li>
 
 						</ul>
@@ -107,19 +107,19 @@ include("partials/connect.php");
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.php">Trang chủ</a>
+					<a href="index.php">Home</a>
 				</li>
 
 				<li>
-					<a href="product.php">Cửa hàng</a>
+					<a href="product.php">Shop</a>
 				</li>
 
 				<li>
-					<a href="about.php">Về chúng tôi</a>
+					<a href="about.php">About</a>
 				</li>
 
 				<li>
-					<a href="contact.php">Liên hệ</a>
+					<a href="contact.php">Contact</a>
 				</li>
 			</ul>
 			

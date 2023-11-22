@@ -8,7 +8,7 @@ if(isset($_POST['update'])) {
     $newdesc = $_POST['description'];
     $newquantity = $_POST['quantity'];
     $newcategory = $_POST['category'];
-
+ 
     $targetDirectory = "uploads/";
     $targetFile = $targetDirectory . basename($_FILES['file']['name']);
 

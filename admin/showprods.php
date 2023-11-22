@@ -54,7 +54,7 @@ include("admin_partials/head.php");
                                 <div class="box-body">
                                     <h3>Name: <?php echo $final['productName'] ?></h3>
                                     <hr>
-                                    <h3>Price: <?php echo $final['productPrice'] ?></h3>
+                                    <h3>Price: <?php echo number_format($final['productPrice'], 0, ',', '.') . ' VND'; ?>
                                     <hr>
                                     <h3>Description: <?php echo $final['productDescription'] ?></h3>
                                     <hr>
