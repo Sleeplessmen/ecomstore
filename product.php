@@ -40,25 +40,23 @@ $result = $connect->query($sql);
 						All Products
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-						Women
-					</button>
+					<?php
+					// Assuming you have a database connection
+					include("partials/connect.php");
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-						Men
-					</button>
+					// Fetch all unique categories from your database
+					$sqlCategories = "SELECT categoryName FROM categories";
+					$resultCategories = $connect->query($sqlCategories);
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-						Bag
-					</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
-						Shoes
-					</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
-						Watches
-					</button>
+					// Display category buttons dynamically
+					while ($rowCategory = $resultCategories->fetch_assoc()) {
+						$category = $rowCategory['categoryName'];
+						echo '<button style="font-family: Arial, sans-serif" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($category) . '">';
+						echo $category;
+						echo '</button>';
+					}
+					?>
+					
 				</div>
 
 				<div class="flex-w flex-c-m m-tb-10">
@@ -293,7 +291,7 @@ $result = $connect->query($sql);
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l">
-									<a href="details.php?detail_id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="details.php?detail_id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" style="font-family: Arial, Helvetical, sans-serif" >
 										<?php echo $final['productName'] ?>
 									</a>
 
@@ -302,12 +300,6 @@ $result = $connect->query($sql);
 									</span>
 								</div>
 
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="Add to Wishlist">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="Added to Wishlist">
-									</a>
-								</div>
 							</div>
 						</div>
 					</div>
