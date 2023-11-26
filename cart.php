@@ -21,7 +21,7 @@ include ("partials/head.php")
 			</a>
 
 			<span class="stext-109 cl4">
-				Shoping Cart
+				Cart
 			</span>
 
 		</div>
@@ -129,9 +129,15 @@ include ("partials/head.php")
 							</div>
 						</div>
 
-						<button onclick="location.href='cart2.php'" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed To Checkout
-						</button>
+						<?php if($total > 0) { ?>
+							<button onclick="location.href='cart2.php'" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+								Proceed To Checkout
+							</button>
+						<?php } else { ?>
+							<button onclick="location.href='product.php'" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+								Add Something To Your Cart
+							</button>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

@@ -50,7 +50,7 @@
 					
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
-						<h4 class="mtext-105 cl2 js-name-detail p-b-14" style="font-family:Arial, Helvetica, sans-serif">
+						<h4 class="mtext-105 cl2 js-name-detail p-b-14" style="font-family:Open Sans, sans-serif;">
 							<?php echo $final['productName'] ?>
 						</h4>
 

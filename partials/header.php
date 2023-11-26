@@ -1,5 +1,6 @@
 <?php
 include("partials/connect.php");
+
 ?>
 <header>
 		<!-- Header desktop -->
@@ -8,22 +9,24 @@ include("partials/connect.php");
 			<!-- Topbar -->
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
-						Free shipping for standard order over $100
+					<div class="left-top-bar" style="font-family: 'Open Sans', sans-serif;">
+						Miễn phí vận chuyển cho tất cả các đơn hàng tiêu chuẩn trên 2.000.000đ
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
 
-					<?php if (empty($_SESSION['email'])) { ?>
-						<a href="customerlogout.php" class="flex-c-m trans-04 p-lr-25">
-							Log In
-						</a>
-					<?php } else { ?>
-						<a href="customerforms.php" class="flex-c-m trans-04 p-lr-25">
-							Log Out
-						</a>
-					<?php }?>
- 
+						<?php if (empty($_SESSION['email'])) { ?>
+							<a href="customerforms.php" class="flex-c-m trans-04 p-lr-25" style="font-family: 'Open Sans', sans-serif;">
+								<strong>Đăng Nhập</strong>
+							</a>
+						<?php } else { ?>
+							<div style="font-family: 'Open Sans', sans-serif;">
+								<span>Xin chào, <?php echo $_SESSION['email']; ?></span>
+								<a href="handler/logout.php" class="flex-c-m trans-04 p-lr-25" style="font-family: 'Open Sans', sans-serif;">
+									<strong>Đăng Xuất</strong>
+								</a>
+							</div>	
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -41,19 +44,19 @@ include("partials/connect.php");
 						<ul class="main-menu">
 							
 							<li>
-								<a href="index.php">Home</a>
+								<a href="index.php" style="font-family: 'Open Sans', sans-serif;">Trang chủ</a>
 							</li>
 
 							<li>
-								<a href="product.php?page=1">Shop</a>
+								<a href="product.php?page=1" style="font-family: 'Open Sans', sans-serif;">Cửa hàng</a>
 							</li> 
 
 							<li>
-								<a href="about.php">About</a>
+								<a href="about.php" style="font-family: 'Open Sans', sans-serif;">Về chúng tôi</a>
 							</li>
 
 							<li>
-								<a href="contact.php">Contact</a>
+								<a href="contact.php" style="font-family: 'Open Sans', sans-serif;">Liên hệ</a>
 							</li>
 
 						</ul>
@@ -77,11 +80,6 @@ include("partials/connect.php");
 						<?php } ?>
  							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
-
-						<a href="index.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" 
-						data-notify="0">
-							<i class="zmdi zmdi-favorite-outline"></i>
-						</a>
 					</div>
 				</nav>
 			</div>	
@@ -96,17 +94,23 @@ include("partials/connect.php");
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<!-- Search Icon -->
 				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" onclick="location.href='cart.php'" data-notify="0">
+				<!-- Cart Icon -->
+				<?php 
+				if(!empty($_SESSION['cart'])) {
+					$qty = count($_SESSION['cart']); ?>
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" onclick="location.href='cart.php'" 
+					data-notify="<?php echo $qty ?>">
+				<?php } else { ?>
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" onclick="location.href='cart.php'" 
+					data-notify="0">
+				<?php } ?>
 					<i class="zmdi zmdi-shopping-cart"></i>
 				</div>
-
-				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-					<i class="zmdi zmdi-favorite-outline"></i>
-				</a>
 			</div>
 
 			<!-- Button show menu -->
@@ -123,19 +127,19 @@ include("partials/connect.php");
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.php">Home</a>
+					<a href="index.php" style="font-family: 'Open Sans', sans-serif;">Trang chủ</a>
 				</li>
 
 				<li>
-					<a href="product.php?">Shop</a>
+					<a href="product.php" style="font-family: 'Open Sans', sans-serif;">Shop</a>
 				</li>
 
 				<li>
-					<a href="about.php">About</a>
+					<a href="about.php" style="font-family: 'Open Sans', sans-serif;">Về chúng tôi</a>
 				</li>
 
 				<li>
-					<a href="contact.php">Contact</a>
+					<a href="contact.php" style="font-family: 'Open Sans', sans-serif;">Liên hệ</a>
 				</li>
 			</ul>
 			
@@ -160,7 +164,7 @@ include("partials/connect.php");
 		
 	</header>
 
-	<!-- Cart -->
+	<!-- Cart
 	<div class="wrap-header-cart js-panel-cart">
 		<div class="s-full js-hide-cart"></div>
 
@@ -205,11 +209,11 @@ include("partials/connect.php");
 							View Cart
 						</a>
 
-						<a href="cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+						<a href="cart2.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
 							Check Out
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->

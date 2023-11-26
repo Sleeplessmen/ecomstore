@@ -51,7 +51,7 @@ $result = $connect->query($sql);
 					// Display category buttons dynamically
 					while ($rowCategory = $resultCategories->fetch_assoc()) {
 						$category = $rowCategory['categoryName'];
-						echo '<button style="font-family: Arial, sans-serif" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($category) . '">';
+						echo '<button style="font-family: Open Sans, sans-serif;" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($category) . '">';
 						echo $category;
 						echo '</button>';
 					}
@@ -291,7 +291,7 @@ $result = $connect->query($sql);
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l">
-									<a href="details.php?detail_id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" style="font-family: Arial, Helvetical, sans-serif" >
+									<a href="details.php?detail_id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" style="font-family: 'Open Sans', sans-serif;" >
 										<?php echo $final['productName'] ?>
 									</a>
 
