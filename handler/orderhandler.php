@@ -36,6 +36,14 @@ foreach ($_SESSION['cart'] as $key => $value) {
     $stmt->execute();
     $stmt->close();
 }
+if ($paymentMethod == "paypal") {
+    $_SESSION['total'] = $total;
+    header('location: paypal.php');
+} else {
+    echo "<script> alert('ORDER IS PLACED');
+    window.location.href='../index.php';
+    </script>";
+}
 
 // Clear the cart after the order is placed
 unset($_SESSION['cart']);

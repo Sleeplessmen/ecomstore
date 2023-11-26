@@ -14,10 +14,16 @@ include("partials/connect.php");
 
 					<div class="right-top-bar flex-w h-full">
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
+					<?php if (empty($_SESSION['email'])) { ?>
+						<a href="customerlogout.php" class="flex-c-m trans-04 p-lr-25">
+							Log In
 						</a>
-
+					<?php } else { ?>
+						<a href="customerforms.php" class="flex-c-m trans-04 p-lr-25">
+							Log Out
+						</a>
+					<?php }?>
+ 
 					</div>
 				</div>
 			</div>
@@ -59,18 +65,28 @@ include("partials/connect.php");
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="0">
-							<i class="zmdi zmdi-shopping-cart"></i>
+						<!-- Cart Icon -->
+						<?php 
+						if(!empty($_SESSION['cart'])) {
+							$qty = count($_SESSION['cart']); ?>
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" onclick="location.href='cart.php'" 
+							data-notify="<?php echo $qty ?>">
+						<?php } else { ?>
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" onclick="location.href='cart.php'" 
+							data-notify="0">
+						<?php } ?>
+ 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<a href="index.php" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" 
+						data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 					</div>
 				</nav>
 			</div>	
 		</div>
-
+  
 		<!-- Header Mobile -->
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
@@ -84,7 +100,7 @@ include("partials/connect.php");
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="0">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" onclick="location.href='cart.php'" data-notify="0">
 					<i class="zmdi zmdi-shopping-cart"></i>
 				</div>
 
@@ -181,7 +197,7 @@ include("partials/connect.php");
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total: $75.00
+						Total: 
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">

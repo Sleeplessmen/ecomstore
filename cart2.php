@@ -152,8 +152,8 @@ include ("partials/head.php")
                                     <div class="rs1-select2 rs2-select2 bor8 bg0 m-b-22 m-t-9">
 										<select class="js-select2" name="payment" placeholder="Select a payment..." required> 
 											<option disabled selected>Select a payment...</option>
-											<option>Cash on delivery</option>
-											<option>Paypal</option>
+											<option value="cash">Cash on delivery</option>
+											<option value="paypal">Paypal</option>
 										</select>
 										<div class="dropDownSelect2"></div>
 									</div>
