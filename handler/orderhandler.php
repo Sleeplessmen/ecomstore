@@ -27,7 +27,7 @@ $orderID = $final['orderID'];
 
 // Insert order details for each item in the cart
 foreach ($_SESSION['cart'] as $key => $value) {
-    $productID = $value['id'];
+    $productID = $value['item_id'];
     $quantity = $value['quantity'];
 
     $insertOrderDetailsQuery = "INSERT INTO orderdetails (orderID, productID, quantity) VALUES (?, ?, ?)";

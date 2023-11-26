@@ -18,8 +18,11 @@ if ($password == $confirmpassword) {
         $sql = "INSERT INTO customers (customerUsername, customerPassword) VALUES ('$email', '$password')";
         $connect->query($sql);
 
+        session_start();
+        $_SESSION['customer_id'] = $email;
+        $_SESSION['customer_username'] = $password;
         // Redirect to customerforms.php
-        header('location: ../customerforms.php');
+        header('location: ../index.php');
     } else {
         // Email already exists
         echo "<script>

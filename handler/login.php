@@ -19,8 +19,9 @@ if (isset($_POST['login'])) {
         $_SESSION['customer_id'] = $final['customerID'];
         $_SESSION['customer_username'] = $final['customerUsername'];
 
+        session_start();
         // Redirect to cart.php
-        header('Location: ../cart.php');
+        header('Location: ../index.php');
     } else {
         echo "<script>
         alert('Credentials are wrong');

@@ -5,15 +5,15 @@ session_start();
 include("partials/connect.php");
 
 if(isset($_POST['remove'])) {
-    $removedItemID = $_POST['id'];
+    $removedItemID = $_POST['item_id'];
     foreach ($_SESSION['cart'] as $key => $value) {
-        if ($value['id'] == $removedItemID) {
+        if ($value['item_id'] == $removedItemID) {
              
             unset($_SESSION['cart'][$key]);
             $_SESSION['cart']=array_values($_SESSION['cart']);
 
             // Remove the item from the database table
-            $delete_query = "DELETE FROM carts WHERE itemID = '$removedItemID' and customerID = 0";
+            $delete_query = "DELETE FROM carts WHERE itemID = '$removedItemID' and customerID = '{$_SESSION['customer_id']}'";
             $stmt = $connect->query($delete_query);
 
             if ($stmt) {

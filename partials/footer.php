@@ -2,16 +2,14 @@
 		<div class="container">
 			<div class="row">
 				<!-- Left section -->
-				<div class="col-sm-6 col-lg-6 p-b-50 text-center">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
+				<div class="col-sm-6 col-lg-6 p-b-50 text-center justify-content-center">
+					<h4 class="stext-301 cl0 p-b-30" style="font-family: 'Open Sans', sans-serif;">
+						Liên lạc với chúng tôi
 					</h4>
 					
-					<div class="stext-107 cl7 p-lr-100">
-					<p>
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+					<p class="stext-107 cl7" style="font-family: 'Open Sans', sans-serif;">
+						Nếu có bất cứ câu hỏi nào? Hãy cho chúng tôi biết tại cửa hàng ở tầng 8, 379 Hudson St, New York, NY 10018 hoặc gọi cho chúng tôi theo số (+1) 96 716 6879.
 					</p>
-					</div>
 					
 					<div class="p-t-20">
 						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-lr-12">
@@ -30,19 +28,18 @@
 
 				<!-- Right section section -->
 				<div class="col-sm-6 col-lg-6 p-b-50 text-center">
-					<h4 class="stext-301 cl0 p-b-30">
-						Newsletter
+					<h4 class="stext-301 cl0 p-b-30" style="font-family: 'Open Sans', sans-serif;">
+						Nhận thông báo
 					</h4>
 
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-							<div class="focus-input1 trans-04"></div>
+							<input class="input1 bg-none plh1 stext-107 cl7 text-center" style="font-family: 'Open Sans', sans-serif;" type="text" name="email" placeholder="Email của bạn" required>
 						</div>
 
 						<div class="p-t-18 p-lr-107 d-flex justify-content-center">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
+							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04" style="font-family: 'Open Sans', sans-serif;">
+								Đăng ký 
 							</button>
 						</div>
 					</form>
@@ -50,35 +47,13 @@
 			</div>
 
 			<div class="p-t-20 text-center">
-				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
-					</a>
 
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
-					</a>
-				</div>
-
-				<p class="stext-107 cl6 txt-center">
-					MADE FOR STUDY PURPOSE
+				<p class="stext-107 cl6 txt-center" style="font-family: 'Open Sans', sans-serif;">
+					Trang web được làm cho mục đích học tập.
 				</p>
-				<p class="stext-107 cl6 txt-center">
+				<p class="stext-107 cl6 txt-center" style="font-family: 'Open Sans', sans-serif;">
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Bản quyền &copy;<script>document.write(new Date().getFullYear());</script> Mọi quyền được bảo lưu | Được tạo bởi <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; phân phối bởi <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
 				</p>
 			</div>
 		</div>

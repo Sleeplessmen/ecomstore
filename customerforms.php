@@ -27,11 +27,11 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Your Email Address">
+							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Email của bạn" style="font-family: 'Open Sans', sans-serif;">
 						</div>
 
 						<div class="bor8 m-b-30">
-                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Your Password">
+                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Mật khẩu" style="font-family: 'Open Sans', sans-serif;" >
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" style="font-family: 'Open Sans', sans-serif;" name="login">
@@ -43,19 +43,19 @@
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
 					<form action="handler/register.php" method="POST">
 						<h4 class="mtext-105 cl2 txt-center p-b-30" style="font-family: 'Open Sans', sans-serif;">
-							Đăng Ký 
+							Tạo tài khoản
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Your Email Address">
+							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Email của bạn" style="font-family: 'Open Sans', sans-serif;">
 						</div>
 
 						<div class="bor8 m-b-20">
-                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Your Password">
+                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Mật khẩu" style="font-family: 'Open Sans', sans-serif;">
 						</div>
 
                         <div class="bor8 m-b-30">
-                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="confirmpassword" placeholder="Confirm Your Password">
+                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="confirmpassword" placeholder="Nhập lại mật khẩu" style="font-family: 'Open Sans', sans-serif;">
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" style="font-family: 'Open Sans', sans-serif;">

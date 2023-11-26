@@ -15,8 +15,8 @@
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
-				<h3 class="ltext-103 cl5">
-					Product Overview
+				<h3 class="ltext-103 cl5" style="font-family: 'Open Sans', sans-serif;">
+					Tổng quan về sản phẩm
 				</h3>
 			</div>
 
@@ -62,18 +62,20 @@
 						<div class="block2-pic hov-img0">
 							<img src="<?php echo $final['productPicture']?>" alt="Product Image - <?php echo $final['productName']; ?>" style="max-height: 400px; max-width: 400px; margin-bottom: 5px;">
 
-							<a href="details.php?detail_id=<?php echo $final['productID'] ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-								Quick View
+							<a href="details.php?detail_id=<?php echo $final['productID'] ?>" 
+							class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04"
+							style="font-family: 'Open Sans', sans-serif;">
+								Chi tiết
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l">
-								<a href="details.php?detail_id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" style="    font-family: 'Open Sans', sans-serif;">
+								<a href="details.php?detail_id=<?php echo $final['productID']; ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" style="font-family: 'Open Sans', sans-serif;">
 									<?php echo $final['productName'] ?>
 								</a>
 
-								<span class="stext-105 cl3">
+								<span class="stext-105 cl3" style="font-family: 'Open Sans', sans-serif;">
 									<?php echo number_format($final['productPrice'], 0, ',', '.') . 'đ'; ?>
 								</span>
 							</div>
@@ -92,8 +94,9 @@
 
 		<!-- Load more -->
 		<div class="flex-c-m flex-w w-full p-t-45">
-			<a href="product.php" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-				Load More
+			<a href="product.php" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04"
+			style="font-family: 'Open Sans', sans-serif;">
+				Xem thêm
 			</a>
 		</div>
 	</div>

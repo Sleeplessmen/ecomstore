@@ -1,6 +1,6 @@
 <?php
 include("partials/connect.php");
-
+session_start();
 ?>
 <header>
 		<!-- Header desktop -->
@@ -15,14 +15,14 @@ include("partials/connect.php");
 
 					<div class="right-top-bar flex-w h-full">
 
-						<?php if (empty($_SESSION['email'])) { ?>
-							<a href="customerforms.php" class="flex-c-m trans-04 p-lr-25" style="font-family: 'Open Sans', sans-serif;">
-								<strong>Đăng Nhập</strong>
+						<?php if (empty($_SESSION['customer_id'])) { ?>
+				
+							<a href="customerforms.php" class="flex-c-m trans-04" style="border: 0; font-family: 'Open Sans', sans-serif;">
+								<strong>Đăng Nhập/Đăng Ký</strong>
 							</a>
 						<?php } else { ?>
-							<div style="font-family: 'Open Sans', sans-serif;">
-								<span>Xin chào, <?php echo $_SESSION['email']; ?></span>
-								<a href="handler/logout.php" class="flex-c-m trans-04 p-lr-25" style="font-family: 'Open Sans', sans-serif;">
+							<div>
+								<a href="handler/logout.php" class="flex-c-m trans-04 p-lr-25" style="border: 0; font-family: 'Open Sans', sans-serif;">
 									<strong>Đăng Xuất</strong>
 								</a>
 							</div>	
@@ -131,7 +131,7 @@ include("partials/connect.php");
 				</li>
 
 				<li>
-					<a href="product.php" style="font-family: 'Open Sans', sans-serif;">Shop</a>
+					<a href="product.php" style="font-family: 'Open Sans', sans-serif;">Cửa hàng</a>
 				</li>
 
 				<li>
