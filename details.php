@@ -2,7 +2,7 @@
 <html lang="en">
 <?php include ("partials/head.php") ?>
 
-<body class="anim sition">
+<body class="animsition">
 	
 	<!-- Header -->
 	<?php include ("partials/header.php") ?>

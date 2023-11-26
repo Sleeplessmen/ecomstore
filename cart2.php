@@ -34,14 +34,6 @@ include ("partials/head.php")
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-lr-0-xl">
-						<?php
-						$total = 0;
-						if (empty($_SESSION['cart'])) {
-							// Display a message when the cart is empty
-							echo '<p class="stext-110 m-t-20 m-b-20 text-center">Cart is empty.</p>
-							';
-						} else {
-						?>
 						<div class="wrap-table-shopping-cart">
 							<table class="table-shopping-cart">
 								<tr class="table_head">
@@ -54,6 +46,7 @@ include ("partials/head.php")
 
 
 								<?php
+								$total = 0;
 								if(isset($_SESSION['cart'])) {
 									foreach ($_SESSION['cart'] as $key => $value) {
 									$subtotal=$value['price'] * $value['quantity'];
@@ -95,7 +88,6 @@ include ("partials/head.php")
 								?>
 							</table>
 						</div>
-						<?php } ?>
 
 						<p class="stext-110 m-t-20 m-b-20 text-center"><a href="product.php">
 							<button>
@@ -129,10 +121,72 @@ include ("partials/head.php")
 							</div>
 						</div>
 
-						<button onclick="location.href='cart2.php'" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed To Checkout
+						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
+							<div class="size-208 w-full-ssm">
+								<span class="stext-110 cl2">
+									Shipping: 
+								</span>
+							</div>
+
+							<div class="size-209 p-r-0-sm w-full-ssm">
+								<p class="mtext-110 cl2">
+									<?php echo number_format(00000, 0, ',', '.') . 'đ'; ?>
+
+								</p>
+								
+								<div class="p-t-15">
+
+                                    <form action="handler/orderhandler.php" method="post">
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" placeholder="Address" required>
+									</div>
+
+                                    <div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="Postcode" required>
+									</div>
+
+									<div class="bor8 bg0 m-b-22">
+										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Phone Number" required>
+									</div>
+
+                                    <div class="rs1-select2 rs2-select2 bor8 bg0 m-b-22 m-t-9">
+										<select class="js-select2" name="payment" placeholder="Select a payment..." required> 
+											<option disabled selected>Select a payment...</option>
+											<option>Cash on delivery</option>
+											<option>Paypal</option>
+										</select>
+										<div class="dropDownSelect2"></div>
+									</div>
+                                
+                                    <div class="bor8 bg0 m-b-22">
+										<textarea class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="comment" placeholder="Comment"></textarea>
+									</div>
+										
+								</div>
+							</div>
+						</div>
+
+						<div class="flex-w flex-t p-t-27 p-b-33">
+							<div class="size-208">
+								<span class="mtext-101 cl2">
+									Total:
+								</span>
+							</div>
+
+							<div class="size-209 p-t-1">
+						 		<span class="mtext-110 cl2">
+								<?php echo number_format($total, 0, ',', '.') . 'đ'; ?>
+								</span>
+							</div>
+						</div>
+
+                        <input type="hidden" name="total" value="<?php echo $total ?>">
+						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
+                        type="submit" name="placeorder">
+							Place Order
 						</button>
-					</div>
+                    </form>
+					</di  v>
 				</div>
 			</div>
 		</div>
