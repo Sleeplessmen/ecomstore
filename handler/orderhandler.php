@@ -3,6 +3,12 @@
 session_start();
 include("../partials/connect.php");
 
+if (!isset($_POST['placeorder'])) {
+    echo "<script> alert('Something is wrong with the form.');
+    window.location.href='../index.php';
+    </script>";
+}
+
 $customerID = $_SESSION['customer_id'];
 $address = $_POST['address'];
 $postcode = $_POST['postcode'];
