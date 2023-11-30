@@ -27,7 +27,7 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Email của bạn" style="font-family: 'Open Sans', sans-serif;">
+							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Tên đăng nhập" style="font-family: 'Open Sans', sans-serif;">
 						</div>
 
 						<div class="bor8 m-b-30">
@@ -47,7 +47,7 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Email của bạn" style="font-family: 'Open Sans', sans-serif;">
+							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Tên đăng nhập" style="font-family: 'Open Sans', sans-serif;">
 						</div>
 
 						<div class="bor8 m-b-20">

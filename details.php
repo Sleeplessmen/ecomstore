@@ -21,9 +21,9 @@
 				include("partials/connect.php");
 				$id=$_GET['detail_id'];
 				$sql="SELECT * FROM products WHERE productID = '$id'";
-				$results=$connect->query($sql);
+				$result=$connect->query($sql);
 
-				$final=$results->fetch_assoc();
+				$final=$result->fetch_assoc();
 
 				?>  
 				<div class="col-md-6 col-lg-7 p-b-30">
@@ -114,28 +114,57 @@
 								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
 									<div class="p-b-30 m-lr-15-sm">
 
-										<!-- Review Example-->
-										<div class="flex-w flex-t p-b-68">
-											<div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-												<img src="images/avatar-01.jpg" alt="AVATAR">
-											</div>
+										<?php
+											$sql1 = "SELECT * FROM reviews WHERE productID = '$id' LIMIT 1";
+											$res1 = $connect->query($sql1);
 
+											if ($res1->num_rows > 0) {
+												// Fetch the review information
+												$final1 = $res1->fetch_assoc();
+											
+												// Fetch customer information for the review
+												$customerID = $final1['customerID'];
+												$sql2 = "SELECT * FROM customers WHERE customerID = '$customerID'";
+												$res2 = $connect->query($sql2);
+											
+												// Check if the customer information is available
+												if ($res2->num_rows > 0) {
+													$final2 = $res2->fetch_assoc();
+												} else {
+													echo "<script> alert('Lỗi 2');
+													window.location.href='details.php?detail_id=" . $id . "';
+													</script>";
+												}
+											} else {
+												echo "<script> alert('Lỗi 1
+												window.location.href='details.php?detail_id=" . $id . "';
+												</script>";
+											}					
+										?>
+
+
+										<!-- Review Example-->
+										<h5 class="mtext-108 cl2 p-b-7" style="font-family: 'Open Sans', sans-serif;">
+												Người mua đánh giá
+										</h5>
+
+										<div class="flex-w flex-t p-t-43 p-b-68">
 											<div class="size-207">
 												<div class="flex-w flex-sb-m p-b-17">
 													<span class="mtext-107 cl2 p-r-20" style="font-family: 'Open Sans', sans-serif;">
-														Nguyễn Văn Thắng
+														<?php echo $final2['customerUsername'] ?>
 													</span>
 
 													<span class="fs-18 cl11">
-														<i class="zmdi zmdi-star"></i>
-														<i class="zmdi zmdi-star"></i>
-														<i class="zmdi zmdi-star"></i>
-														<i class="zmdi zmdi-star"></i>
+														<?php 
+														for($i = 0; $i < $final1['reviewRating']; $i++) { ?>
+															<i class="zmdi zmdi-star"></i>
+														<?php } ?>
 													</span>
 												</div>
 
 												<p class="stext-102 cl6" style="font-family: 'Open Sans', sans-serif;">
-														Sản phẩm tồi.
+														<?php echo $final1['reviewText'] ?>
 												</p>
 											</div>
 										</div>

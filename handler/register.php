@@ -25,21 +25,21 @@ if ($password == $confirmpassword) {
 
         session_start();
         $_SESSION['customer_id'] = $email;
-        $_SESSION['customer_phone'] = $phone;
+        // $_SESSION['customer_phone'] = $phone;
         $_SESSION['customer_username'] = $password;
         // Redirect to customerforms.php
         header('location: ../index.php');
     } else {
         // Email already exists
         echo "<script>
-            alert('Email already exists');
+            alert('Tên đăng nhập đã tồn tại');
             window.location.href='../customerforms.php';
         </script>";
     }
 } else {
     // Passwords don't match
     echo "<script>
-        alert('Password did not match');
+        alert('Mật khẩu không đúng');
         window.location.href='../customerforms.php';
     </script>";
 }
