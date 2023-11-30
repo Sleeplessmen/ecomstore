@@ -52,7 +52,7 @@
 		<div class="row isotope-grid">
 			<?php
 			include("partials/connect.php");
-			$sql = "SELECT * FROM products ORDER BY RAND() LIMIT 20";
+			$sql = "SELECT * FROM products";
 			$result = $connect->query($sql);
 
 			while ($final = $result->fetch_assoc()) :

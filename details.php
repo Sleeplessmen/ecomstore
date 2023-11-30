@@ -22,6 +22,7 @@
 				$id=$_GET['detail_id'];
 				$sql="SELECT * FROM products WHERE productID = '$id'";
 				$results=$connect->query($sql);
+
 				$final=$results->fetch_assoc();
 
 				?>  
@@ -140,7 +141,7 @@
 										</div>
 										
 										<!-- Add review form-->
-										<form action="review.php" method="post">
+										<form action="review.php" method="post" class="w-full">
 											<h5 class="mtext-108 cl2 p-b-7" style="font-family: 'Open Sans', sans-serif;">
 												Thêm đánh giá
 											</h5>
@@ -167,8 +168,8 @@
 												</div>
 											</div>
 
-											<input type="hidden" name="product_id" value="<?php echo $id ?>">
-											<button type="submit" name="addreview" class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10" style="font-family: 'Open Sans', sans-serif;">
+											<input type="hidden" name="productID" value="<?php echo $final['productID'] ?>">
+											<button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10" style="font-family: 'Open Sans', sans-serif;">
 												Gửi nhận xét
 											</button>
 										</form>
@@ -194,6 +195,7 @@
 
 			<!-- Slide2 -->
 			<div class="wrap-slick2">
+
 				<div class="slick2">
 	
 				</div>

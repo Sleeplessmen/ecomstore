@@ -2176,12 +2176,6 @@ input.num-product::-webkit-inner-spin-button {
   line-height: 1.2;
 }
 
-.stext-107 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.923;
-}
-
 .stext-108 {
   font-family: Poppins-Light;
   font-size: 14px;
@@ -2596,7 +2590,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .size-213 {
-  max-width: 245px;
+  max-width: 245;
 }
 
 .size-214 {

@@ -9,7 +9,7 @@
 	<?php include ("partials/header.php") ?>
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bktest.jpg');">
 		<h2 class="ltext-105 cl0 txt-center" style="font-family: 'Open Sans', sans-serif;">
 			Liên hệ
 		</h2>
@@ -26,11 +26,19 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
+<<<<<<< Updated upstream
 							<input class="stext-111 cl2 plh3 size-116 p-lr-28" type="text" name="email" placeholder="Tài khoản email của bạn" style="font-family: 'Open Sans', sans-serif;">
 						</div>
 
 						<div class="bor8 m-b-30">
 							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="Chúng tôi có thể giúp bạn như thế nào?" style="font-family: 'Open Sans', sans-serif;"></textarea>
+=======
+							<input class="stext-111 cl2 plh3 size-116 p-lr-28" type="text" name="email" placeholder="Nhập Email của bạn">
+						</div>
+
+						<div class="bor8 m-b-30">
+							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+>>>>>>> Stashed changes
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" style="font-family: 'Open Sans', sans-serif;">
@@ -50,8 +58,8 @@
 								Địa chỉ
 							</span>
 
-							<p class="stext-115 cl6 size-213 p-t-10">
-								Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+							<p class="stext-115 cl6 size-213 p-t-10" style="font-family: 'Open Sans', sans-serif;">
+								Tầng 12 của tòa nhà Capital Building, số 41 Hai Bà Trưng, Phường Tràng Tiền, Quận Hoàn Kiếm, Hà Nội
 							</p>
 						</div>
 					</div>
