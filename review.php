@@ -11,7 +11,7 @@ if(empty($_SESSION['customer_id'])) {
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get data from the forms
+    // Get data from the form
     $productID = $_POST['productID']; // You should include this input field in your form
     $customerID = $_SESSION['customer_id']; // You should include this input field in your form
     $rating = $_POST['rating'];
@@ -20,9 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate data (you might want to add more validation)
     if (empty($rating)) {
         echo "<script> alert('Đánh giá không được để trống.');
-        window.location.href='details.php?detail_id=" . $productID . "';
+        window.location.href='details.php?detail_id='$productID'';
         </script>";
     }
+
+    $currentDateTime = date('Y-m-d H:i:s');
 
     // Insert the review into the database
     $insertReview = $connect->prepare("INSERT INTO reviews (productID, customerID, reviewRating, reviewText, reviewDate) VALUES (?, ?, ?, ?, NOW())");
@@ -30,11 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($insertReview->execute()) {
         echo "<script> alert('Thêm đánh giá thành công');
-        window.location.href='details.php?detail_id=" . $productID . "';
+        window.location.href='details.php?detail_id='$productID'';
         </script>";
     } else {
         echo "<script> alert('Lỗi xảy ra khi thêm đánh giá: ' . $insertReview->error);
-        window.location.href='details.php?detail_id=" . $productID . "';
+        window.location.href='details.php?detail_id='$productID'';
         </script>";
     }
 
