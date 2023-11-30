@@ -19,14 +19,9 @@ include("admin_partials/head.php");
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>
-                    Dashboard
-                    <small>Control panel</small>
+                <h1  style="font-family: 'Open Sans', sans-serif;">
+                    Quản lý sản phẩm
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>
             </section>
 
             <!-- Main Content -->
@@ -52,13 +47,13 @@ include("admin_partials/head.php");
                         <div class="col-md-6">
                             <div class="box">
                                 <div class="box-body">
-                                    <h3>Name: <?php echo $final['productName'] ?></h3>
+                                    <h3 style="font-family: 'Open Sans', sans-serif;">Tên sản phẩm: <?php echo $final['productName'] ?></h3>
                                     <hr>
-                                    <h3>Price: <?php echo number_format($final['productPrice'], 0, ',', '.') . ' VND'; ?>
+                                    <h3 style="font-family: 'Open Sans', sans-serif;">Giá sản phẩm: <?php echo number_format($final['productPrice'], 0, ',', '.') . ' VND'; ?>
                                     <hr>
-                                    <h3>Description: <?php echo $final['productDescription'] ?></h3>
+                                    <h3 style="font-family: 'Open Sans', sans-serif;">Mô tả sản phẩm: <?php echo $final['productDescription'] ?></h3>
                                     <hr>
-                                    <h3>Image:</h3>
+                                    <h3 style="font-family: 'Open Sans', sans-serif;">Hình ảnh sản phẩm:</h3>
                                     <img src="<?php echo $final['productPicture'] ?>" alt="Product Image" style="height:300px; width:300px">
                                 </div>
                             </div>

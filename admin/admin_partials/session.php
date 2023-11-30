@@ -2,8 +2,10 @@
 
 session_start();
 
-if(empty($_SESSION['email'] and $_SESSION['password'])) {
-    header("Location: admin_login.php");
+if(!isset($_SESSION['name'])) {
+    echo "<script> alert('Bạn cần đăng nhập tài khoản quản trị viên trước');
+     window.location.href='admin_login.php';
+    </script>";
 }
 
 

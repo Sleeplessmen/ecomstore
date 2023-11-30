@@ -18,15 +18,10 @@ include("admin_partials/head.php");
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                Dashboard
-                <small>Control panel</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </section>
+                <h1 style="font-family: 'Open Sans', sans-serif;">
+                    Quản lý danh mục
+                </h1>
+            </section>
 
         <!-- Main Content -->
         <section class="content">
@@ -37,19 +32,19 @@ include("admin_partials/head.php");
                     <form role="form" action="cathandler.php" method="post">
                         <div class="box box-primary">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Add Category</h3>
+                                <h3 class="box-title" style="font-family: 'Open Sans', sans-serif;">Thêm danh mục</h3>
                             </div>
 
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="category">Category Name</label>
-                                    <input type="text" class="form-control" id="category" placeholder="Enter Category" name="name" required>
+                                    <label for="category" style="font-family: 'Open Sans', sans-serif;">Tên danh mục</label>
+                                    <input type="text" class="form-control" id="category" placeholder="Nhập tên danh mục" name="name" style="font-family: 'Open Sans', sans-serif;" required>
                                 </div>
                             </div>
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" style="font-family: 'Open Sans', sans-serif;">Hoàn thành</button>
                             </div>
                         </div>
                     </form>

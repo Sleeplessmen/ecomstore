@@ -1,27 +1,31 @@
 <?php 
 session_start();
-
 include("admin_partials/head.php");
 
 if(isset($_POST['login'])) {
-
 include("../partials/connect.php");
 
-$email = $_POST['email'];
+$name = $_POST['name'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM admins WHERE adminUsername='$email' AND adminPassword='$password'";
+$sql = "SELECT admin_password FROM admins WHERE admin_username='$name'";
     
 $result = $connect->query($sql);
-$final = $result->fetch_assoc();
-
-$_SESSION['email']=$final['adminUsername'];
-$_SESSION['password']=$final['adminPassword'];
-
-if ($email=$final['adminUsername'] AND $password=$final['adminPassword']) {
-  header('Location: admin_index.php');  
+if($result->num_rows > 0) {
+    $final = $result->fetch_assoc();
+    if ($password == $final['admin_password']) {
+    $_SESSION['name'] = $name;
+    $_SESSION['password'] = $final['admin_password'];
+    header('Location: admin_index.php');  
+    } else {
+      echo "<script> alert('Mật khẩu không đúng');
+      window.location.href='admin_login.php';
+      </script>";
+    }
 } else {
-  header('Location: admin_login.php');
+  echo "<script> alert('Tên đăng nhập không tồn tại');
+  window.location.href='admin_login.php';
+  </script>";
 }
 }  
 
@@ -34,7 +38,7 @@ if ($email=$final['adminUsername'] AND $password=$final['adminPassword']) {
         <div class="box box-info">
 
             <div class="box-header with-border">
-              <h3 class="box-title">Admin Login</h3>
+              <h3 class="box-title" style="font-family: 'Open Sans', sans-serif;">Quản trị viên đăng nhập</h3>
             </div>
             <!-- /.box-header -->
              
@@ -43,16 +47,16 @@ if ($email=$final['adminUsername'] AND $password=$final['adminPassword']) {
               <div class="box-body">
 
                 <div class="form-group">
-                  <label for="email" class="col-sm-2 control-label">Email</label>
+                  <label for="name" class="col-sm-2 control-label" style="font-family: 'Open Sans', sans-serif;">Tên đăng nhập</label>
                   <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                    <input type="text" class="form-control" id="name" placeholder="Tên đăng nhập" name="name" style="font-family: 'Open Sans', sans-serif;">
                   </div> 
                 </div>
 
                 <div class="form-group">
-                  <label for="password" class="col-sm-2 control-label">Password</label>
+                  <label for="password" class="col-sm-2 control-label" style="font-family: 'Open Sans', sans-serif;">Mật khẩu</label>
                   <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                    <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" style="font-family: 'Open Sans', sans-serif;">
                   </div>
                 </div>
 
@@ -60,7 +64,7 @@ if ($email=$final['adminUsername'] AND $password=$final['adminPassword']) {
                   <div class="col-sm-offset-2 col-sm-10">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> Remember me
+                        <input type="checkbox"> Nhớ mật khẩu
                       </label>
                     </div>
                   </div>
@@ -70,7 +74,7 @@ if ($email=$final['adminUsername'] AND $password=$final['adminPassword']) {
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-info pull-right" name="login">Sign in</button>
+                <button type="submit" class="btn btn-info pull-right" name="login" style="font-family: 'Open Sans', sans-serif;">Đăng nhập</button>
               </div>
               <!-- /.box-footer -->
             </form>

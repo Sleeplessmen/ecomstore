@@ -7,7 +7,7 @@ $customerID = $_SESSION['customer_id'];
 $address = $_POST['address'];
 $postcode = $_POST['postcode'];
 $phone = $_POST['phone'];
-$paymentMethod = $_POST['payment'];
+$paymentmethodid = $_POST['payment'];
 $comment = $_POST['comment'];
 $total = $_POST['total'];
 $currentDateTime = date('Y-m-d H:i:s');
@@ -17,7 +17,7 @@ $currentDateTime = date('Y-m-d H:i:s');
 $insertOrderQuery = "INSERT INTO orders (customerID, address_line, postal_code, phone, payment_method_id, comment, total_amount, created_at, updated_at)
                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $connect->prepare($insertOrderQuery);
-$stmt->bind_param("isisisiss", $customerID, $address, $postcode, $phone, $paymentMethod, $comment, $total, $currentDateTime, $currentDateTime);
+$stmt->bind_param("isisisiss", $customerID, $address, $postcode, $phone, $paymentmethodid, $comment, $total, $currentDateTime, $currentDateTime);
 $stmt->execute();
 $stmt->close();
 

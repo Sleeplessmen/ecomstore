@@ -31,7 +31,7 @@ include("admin_partials/head.php");
 
             <!-- Main Content -->
             <section class="content">
-                <p><a href="products.php" class="btn btn-success">Add New Product</a><br></p>
+                <p><a href="products.php" class="btn btn-success" style="font-family: 'Open Sans', sans-serif;">Thêm sản phẩm mới</a><br></p>
                 <h3>Show All Products</h3>
                 <div class="row">
                     
