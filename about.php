@@ -31,7 +31,7 @@
 						Tại trái tim của chúng tôi, chúng tôi tin vào sức mạnh của việc kết nối con người thông qua những trải nghiệm ý nghĩa. Từ những ngày đầu thành lập, chúng tôi đã tận tâm giao hàng những sản phẩm làm phong phú cuộc sống và khuyến khích tinh thần cộng đồng.						</p>
 
 						<p class="stext-113 cl6 p-b-26" style="font-family: 'Open Sans', sans-serif;">
-						Có câu hỏi hoặc cần sự hỗ trợ? Đừng ngần ngại liên lạc với chúng tôi tại cửa hàng vật lý của chúng tôi tại tầng 8, 379 Hudson St, New York, NY 10018, hoặc gọi cho chúng tôi theo số (+84) 867 578 422. Chúng tôi ở đây để hỗ trợ bạn!						</p>
+						Có câu hỏi hoặc cần sự hỗ trợ? Đừng ngần ngại liên lạc với chúng tôi tại Tầng 12, Tòa nhà Capital Building, số 41 Hai Bà Trưng, Phường Tràng Tiền, Quận Hoàn Kiếm, Hà Nội, hoặc gọi cho chúng tôi theo số (+84) 867578422. Chúng tôi ở đây để hỗ trợ bạn!						</p>
 					</div>
 				</div>
 

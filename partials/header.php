@@ -20,15 +20,12 @@ session_start();
 							<a href="customerforms.php" class="flex-c-m trans-04" style="border: 0; font-family: 'Open Sans', sans-serif;">
 								<strong>Đăng Nhập/Đăng Ký</strong>
 							</a>
-
 						<?php } else { ?>
-
 							<div>
 								<a href="handler/logout.php" class="flex-c-m trans-04 p-lr-25" style="border: 0; font-family: 'Open Sans', sans-serif;">
 									<strong>Đăng Xuất</strong>
 								</a>
 							</div>	
-							
 						<?php } ?>
 					</div>
 				</div>

@@ -85,7 +85,6 @@ include("admin_partials/head.php");
                                           ?>
                                         </select>
                                     </div>
-
                                 </div>
                                 <!-- /.box-body -->
 

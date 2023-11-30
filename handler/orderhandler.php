@@ -3,12 +3,6 @@
 session_start();
 include("../partials/connect.php");
 
-if (!isset($_POST['placeorder'])) {
-    echo "<script> alert('Something is wrong with the form.');
-    window.location.href='../index.php';
-    </script>";
-}
-
 $customerID = $_SESSION['customer_id'];
 $address = $_POST['address'];
 $postcode = $_POST['postcode'];
@@ -18,10 +12,10 @@ $comment = $_POST['comment'];
 $total = $_POST['total'];
 
 // Insert order information
-$insertOrderQuery = "INSERT INTO orders (customerID, address_line, postal_code, phone, payment_method_id, comment, total_amount)
+$insertOrderQuery = "INSERT INTO orders (customerID, addressLine, postalCode, phone, paymentMethod, comment, total_amount)
                     VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $connect->prepare($insertOrderQuery);
-$stmt->bind_param("isssisi", $customerID, $address, $postcode, $phone, $paymentMethod, $comment, $total);
+$stmt->bind_param("isssssi", $customerID, $address, $postcode, $phone, $paymentMethod, $comment, $total);
 $stmt->execute();
 $stmt->close();
 
@@ -36,7 +30,7 @@ foreach ($_SESSION['cart'] as $key => $value) {
     $productID = $value['item_id'];
     $quantity = $value['quantity'];
 
-    $insertOrderDetailsQuery = "INSERT INTO orderdetails (orderID, itemID, quantity) VALUES (?, ?, ?)";
+    $insertOrderDetailsQuery = "INSERT INTO orderdetails (orderID, productID, quantity) VALUES (?, ?, ?)";
     $stmt = $connect->prepare($insertOrderDetailsQuery);
     $stmt->bind_param("isi", $orderID, $productID, $quantity);
     $stmt->execute();

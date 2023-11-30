@@ -56,6 +56,41 @@ $result = $connect->query($sql);
 						echo '</button>';
 					}
 					?>
+
+					<?php
+					// Assuming you have a database connection
+					include("partials/connect.php");
+					
+					// Handle the button click event
+					if (isset($_GET['filter'])) {
+						$filter = $_GET['filter'];
+
+						// Check if the filter is set to "*" (All Products)
+						if ($filter === '*') {
+							$sqlProducts = "SELECT * FROM products";
+						} else {
+							// Modify this part based on your database schema
+							$category = strtolower($filter);
+							$sqlProducts = "SELECT p.*
+											FROM products p
+											JOIN categories c ON c.categoryID = p.categoryID
+											WHERE c.categoryName = '$category'";
+						}
+
+						// Execute the query and fetch the products
+						$resultProducts = $connect->query($sqlProducts);
+
+						// Display the products
+						while ($rowProduct = $resultProducts->fetch_assoc()) {
+							$product = $rowProduct['ProductName'];
+							echo '<button style="font-family: Open Sans, sans-serif;" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($product) . '">';
+							echo $product;
+							echo '</button>';
+						}
+					}
+					?>
+
+					
 					
 				</div>
 
