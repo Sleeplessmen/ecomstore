@@ -5,7 +5,7 @@ include("partials/connect.php");
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get data from the form
-    $productID = $_POST['productID']; // You should include this input field in your form
+    // $productID = $_POST['productID']; // You should include this input field in your form
     $customerID = $_SESSION['customer_id']; // You should include this input field in your form
     $rating = $_POST['rating'];
     $reviewText = $_POST['review'];
@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($_SESSION['email'])) {
         echo "<script> alert('Bạn cần đăng nhập hoặc đăng ký để đánh giá.');
         </script>";
-
     }
 
     // Validate data (you might want to add more validation)
@@ -22,9 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>";
     }
 
+    $currentDateTime = date('Y-m-d H:i:s');
+
     // Insert the review into the database
-    $insertReview = $connect->prepare("INSERT INTO reviews (productID, customerID, reviewRating, reviewText, reviewDate) VALUES (?, ?, ?, ?, NOW())");
-    $insertReview->bind_param("siss", $productID, $customerID, $rating, $reviewText);
+    $insertReview = $connect->prepare("INSERT INTO reviews(productID, customerID, reviewRating, reviewText, reviewDate) 
+                                       VALUES (?, ?, ?, ?, ?");
+    $insertReview->bind_param("siis", $productID, $customerID, $rating, $reviewText, $currentDateTime);
 
     if ($insertReview->execute()) {
         echo "<script> alert('Review added successfully!');

@@ -1,12 +1,10 @@
-
-
 <?php
 
 session_start();
 
 include("partials/connect.php");
 
-// This is for details.php , add 1 item of the product type to the cart
+// This is for details.php, add 1 item of the product type to the cart
 if (isset($_SESSION['cart'])) {
     $checker=array_column($_SESSION['cart'], 'name');
     if(in_array($_GET['name'], $checker)) {

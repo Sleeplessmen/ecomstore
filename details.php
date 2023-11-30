@@ -183,27 +183,6 @@
 		</div>
 	</section>
 
-
-	<!-- Related Products -->
-	<section class="sec-relate-product bg0 p-t-45 p-b-105">
-		<div class="container">
-			<div class="p-b-45">
-				<h3 class="ltext-106 cl5 txt-center" style="font-family: 'Open Sans', sans-serif;">
-					Sản phẩm liên quan có thể bạn quan tâm
-				</h3>
-			</div>
-
-			<!-- Slide2 -->
-			<div class="wrap-slick2">
-
-				<div class="slick2">
-	
-				</div>
-			</div>
-		</div>
-	</section>
-		
-
 	<!-- Footer -->
 	<?php include ("partials/footer.php") ?>
 </body>
