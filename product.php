@@ -51,7 +51,9 @@ $result = $connect->query($sql);
 					// Display category buttons dynamically
 					while ($rowCategory = $resultCategories->fetch_assoc()) {
 						$category = $rowCategory['categoryName'];
-						echo '<button style="font-family: Open Sans, sans-serif;" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($category) . '">';
+						echo '<button style="font-family: Open Sans, sans-serif;" 
+							   class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" 
+							   data-filter=".' . strtolower($category) . '">';
 						echo $category;
 						echo '</button>';
 					}
@@ -83,14 +85,15 @@ $result = $connect->query($sql);
 						// Display the products
 						while ($rowProduct = $resultProducts->fetch_assoc()) {
 							$product = $rowProduct['ProductName'];
-							echo '<button style="font-family: Open Sans, sans-serif;" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".' . strtolower($product) . '">';
+							echo '<button style="font-family: Open Sans, sans-serif;" 
+								   class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" 
+								   data-filter=".' . strtolower($product) . '">';
 							echo $product;
 							echo '</button>';
 						}
 					}
-					?>
+					?> 
 
-					
 					
 				</div>
 
