@@ -75,7 +75,7 @@ include("admin_partials/head.php");
                                           $results=mysqli_query($connect, $cat);
 
                                           while($row=mysqli_fetch_assoc($results)) {
-                                            echo "<option value=" . $row['categoryID']. ">" . $row['categoryName'] . "</option>";
+                                            echo "<option style='font-family: 'Open Sans', sans-serif;' value=" . $row['categoryID']. ">" . $row['categoryName'] . "</option>";
                                           }
                                           ?>
                                         </select>

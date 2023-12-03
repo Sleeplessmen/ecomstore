@@ -38,12 +38,6 @@
         </li>
 
         <li>
-          <a href="profile.php">
-            <i class="fa fa-th"></i> <span  style="font-family: 'Open Sans', sans-serif;">Thông tin cá nhân</span>
-          </a>
-        </li>
-
-        <li>
           <a href="categories.php">
             <i class="fa fa-th"></i> <span  style="font-family: 'Open Sans', sans-serif;">Danh mục</span>
           </a>
@@ -52,6 +46,18 @@
         <li>
           <a href="showproducts.php">
             <i class="fa fa-th"></i> <span  style="font-family: 'Open Sans', sans-serif;">Sản phẩm</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="orders.php">
+            <i class="fa fa-th"></i> <span  style="font-family: 'Open Sans', sans-serif;">Đơn hàng</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="settings.php">
+            <i class="fa fa-th"></i> <span  style="font-family: 'Open Sans', sans-serif;">Cài đặt</span>
           </a>
         </li>
 

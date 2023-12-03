@@ -16,6 +16,8 @@ if($result->num_rows > 0) {
     if ($password == $final['admin_password']) {
     $_SESSION['name'] = $name;
     $_SESSION['password'] = $final['admin_password'];
+    $_SESSION['lastname'] = $final['contact_lastname'];
+    $_SESSION['firstname'] = $final['contact_firstname'];
     header('Location: admin_index.php');  
     } else {
       echo "<script> alert('Mật khẩu không đúng');
