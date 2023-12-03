@@ -7,11 +7,12 @@
         <div class="pull-left image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="Admin Image">
         </div>
-        <div class="pull-right info">
-        <a href='profile.php'><?php echo $_SESSION['name'] ?></a>
+        <div class="pull-left info">
+          <p><?php 
+          echo $_SESSION['name'];
+          ?></p>
         </div>
       </div>
-
 
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
@@ -28,34 +29,35 @@
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        
-        <li>
-          <a href="admin_index.php">
-            <i class="fa fa-dashboard"></i> <span style="font-family: 'Open Sans', sans-serif;">Bảng điều khiển</span>
-          </a>
-        </li>
 
         <li>
           <a href="myshop.php">
-            <i class="fa fa-shopping-cart"></i> <span  style="font-family: 'Open Sans', sans-serif;">Cửa hàng của tôi</span>
+            <i class="fa fa-list-ul"></i> <span  style="font-family: 'Open Sans', sans-serif;">Quản lý</span>
+          </a>
+        </li>
+
+
+        <li>
+          <a href="showcategories.php">
+            <i class="fa fa-server"></i> <span  style="font-family: 'Open Sans', sans-serif;">Danh mục</span>
           </a>
         </li>
 
         <li>
-          <a href="analystic.php">
-            <i class="fa fa-bar-chart"></i> <span  style="font-family: 'Open Sans', sans-serif;">Thống kê</span>
+          <a href="showproducts.php">
+            <i class="fa fa-cubes"></i> <span  style="font-family: 'Open Sans', sans-serif;">Sản phẩm</span>
           </a>
         </li>
 
         <li>
-          <a href="">
-            <i class="fa fa-weixin"></i> <span  style="font-family: 'Open Sans', sans-serif;">Tin nhắn</span>
+          <a href="orders.php">
+            <i class="fa fa-cart-arrow-down"></i> <span  style="font-family: 'Open Sans', sans-serif;">Đơn hàng</span>
           </a>
         </li>
 
         <li>
-          <a href="admin_partials/logout.php">
-            <i class="fa fa-sign-out"></i> <span  style="font-family: 'Open Sans', sans-serif;">Đăng xuất</span>
+          <a href="admin_index.php">
+            <i class="fa fa-reply"></i> <span  style="font-family: 'Open Sans', sans-serif;">Quay lại</span>
           </a>
         </li>
         

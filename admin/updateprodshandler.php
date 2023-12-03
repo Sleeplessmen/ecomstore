@@ -19,9 +19,13 @@ if(isset($_POST['update'])) {
     categoryID='$newcategory' where productID = '$newID'"; 
 
     if (mysqli_query($connect, $sql)) {
-        header('location: showproducts.php');
+        echo "<script>alert('Thêm sản phẩm thành công');
+        window.location.href='showproducts.php';
+        </script>";
     } else {
-        header('location: admin_index.php');
+        echo "<script>alert('Lỗi xảy ra');
+        window.location.href='showcategories.php';
+        </script>";
     }
 
 }

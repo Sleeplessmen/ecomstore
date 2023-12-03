@@ -9,14 +9,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO categories(categoryName) VALUES ('$categoryName')";
 
     if (mysqli_query($connect, $query)) {
-        echo "Category added successfully!";
-        header("Location: showproducts.php");
-        exit();
+        echo "<script>alert('Thêm danh mục thành công');
+        window.location.href='showcategories.php';
+        </script>";
     } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($connect);
+        echo "<script>alert('Lỗi xảy ra: ' . $query . '<br>' . mysqli_error($connect));
+        window.location.href='showcategories.php';
+        </script>";
     }
 } else {
-    echo "Invalid request.";
+    echo "<script>alert('Yêu cầu không hợp lý');
+    window.location.href='showcategories.php';
+    </script>";
 }
 
 

@@ -12,14 +12,14 @@ include("admin_partials/head.php");
     <?php include("admin_partials/header.php") ?>
 
     <!-- Aside -->
-    <?php include("admin_partials/aside.php") ?>
+    <?php include("admin_partials/myshopaside.php") ?>
         
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
                 <h1 style="font-family: 'Open Sans', sans-serif;">
-                    Quản lý danh mục
+                    Thêm danh mục
                 </h1>
             </section>
 

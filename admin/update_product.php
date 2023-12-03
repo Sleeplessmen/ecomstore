@@ -18,11 +18,6 @@ include("admin_partials/head.php");
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1 style="font-family: 'Open Sans', sans-serif;">
-                    Quản lý sản phẩm
-                </h1>
-            </section>
 
             <!-- Main Content -->
             <section class="content">

@@ -13,7 +13,7 @@ include("admin_partials/head.php");
         <?php include("admin_partials/header.php") ?>
 
         <!-- Aside -->
-        <?php include("admin_partials/aside.php") ?>
+        <?php include("admin_partials/myshopaside.php") ?>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -45,9 +45,9 @@ include("admin_partials/head.php");
                                     <h5 class="card-title"><?php echo $product['productID'] ?>: <?php echo $product['productName'] ?></h5>
 
                                     <div class="btn-group" role="group">
-                                        <a href="showprods.php?id=<?php echo $product['productID'] ?>" class="btn btn-info" style="font-family: 'Open Sans', sans-serif;">Xem</a>
-                                        <a href="updateprods.php?id=<?php echo $product['productID'] ?>" class="btn btn-primary" style="font-family: 'Open Sans', sans-serif;">Cập nhật</a>
-                                        <a href="deleteprods.php?id=<?php echo $product['productID'] ?>" class="btn btn-danger" style="font-family: 'Open Sans', sans-serif;">Xóa</a>
+                                        <a href="view_product.php?id=<?php echo $product['productID'] ?>" class="btn btn-info" style="font-family: 'Open Sans', sans-serif;">Xem</a>
+                                        <a href="update_product.php?id=<?php echo $product['productID'] ?>" class="btn btn-primary" style="font-family: 'Open Sans', sans-serif;">Cập nhật</a>
+                                        <a href="delete_product.php?id=<?php echo $product['productID'] ?>" class="btn btn-danger" style="font-family: 'Open Sans', sans-serif;">Xóa</a>
                                     </div>
                                 </div>
                             </div>

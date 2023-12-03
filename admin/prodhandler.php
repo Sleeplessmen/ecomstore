@@ -20,25 +20,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($check !== false) {
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        echo "file không phải là ảnh";
         $uploadOk = 0;
     }
 
     // Check file size
     if ($_FILES["file"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
+        echo "Xin lỗi, file của bạn quá lớn";
         $uploadOk = 0;
     }
 
     // Allow certain file formats
     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        echo "Xin lỗi, chỉ JPG, JPEG, PNG & GIF file được cho phép";
         $uploadOk = 0;
     }
 
      // Check if $uploadOk is set to 0 by an error
      if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
+        echo "Xin lỗi, file của bạn không thể tải lên";
     } else {
         // Attempt to move the uploaded file
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
@@ -46,19 +46,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $query = "INSERT INTO products(productName, productPrice, productDescription, productQuantity, productPicture, categoryID) VALUES ('$name','$price','$description','$quantity','$targetFile','$category')";
 
             if (mysqli_query($connect, $query)) {
-                echo"Product added successfully!";
-                header("Location: products.php");
-                exit();
+                echo"Thêm sản phẩm thành công!";
+                header("Location: showproducts.php");
             } else {
-                echo "Error: " . $query . "<br>" . mysqli_error($connect);
+                echo "Lỗi xảy ra: " . $query . "<br>" . mysqli_error($connect);
             }
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Lỗi xảy ra khi chuyển file ảnh về thư mục uploads";
         }
     }
 
 } else {
-    echo "Invalid request.";
+    echo "Yêu cầu không đúng.";
 }
 
 

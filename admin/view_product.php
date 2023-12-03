@@ -17,13 +17,7 @@ include("admin_partials/head.php");
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1  style="font-family: 'Open Sans', sans-serif;">
-                    Quản lý sản phẩm
-                </h1>
-            </section>
-
+    
             <!-- Main Content -->
             <section class="content">
                 <div class="row">
@@ -49,7 +43,7 @@ include("admin_partials/head.php");
                                 <div class="box-body">
                                     <h3 style="font-family: 'Open Sans', sans-serif;">Tên sản phẩm: <?php echo $final['productName'] ?></h3>
                                     <hr>
-                                    <h3 style="font-family: 'Open Sans', sans-serif;">Giá sản phẩm: <?php echo number_format($final['productPrice'], 0, ',', '.') . ' VND'; ?>
+                                    <h3 style="font-family: 'Open Sans', sans-serif;">Giá sản phẩm: <?php echo number_format($final['productPrice'], 0, ',', '.') . 'đ'; ?>
                                     <hr>
                                     <h3 style="font-family: 'Open Sans', sans-serif;">Mô tả sản phẩm: <?php echo $final['productDescription'] ?></h3>
                                     <hr>
@@ -59,7 +53,7 @@ include("admin_partials/head.php");
                             </div>
                         </div>
                     <?php } else {
-                        echo "<p>Product not found.</p>";
+                        echo "<p>Không tìm thấy sản phẩm</p>";
                     } ?>
 
                     <div class="col-md-3"></div>
