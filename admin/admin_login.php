@@ -8,7 +8,7 @@ include("../partials/connect.php");
 $name = $_POST['name'];
 $password = $_POST['password'];
 
-$sql = "SELECT admin_password FROM admins WHERE admin_username='$name'";
+$sql = "SELECT * FROM admins WHERE admin_username='$name'";
     
 $result = $connect->query($sql);
 if($result->num_rows > 0) {
@@ -16,6 +16,7 @@ if($result->num_rows > 0) {
     if ($password == $final['admin_password']) {
     $_SESSION['name'] = $name;
     $_SESSION['password'] = $final['admin_password'];
+    $_SESSION['id'] = $final['adminID'];
     $_SESSION['lastname'] = $final['contact_lastname'];
     $_SESSION['firstname'] = $final['contact_firstname'];
     header('Location: admin_index.php');  
