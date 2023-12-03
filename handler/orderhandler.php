@@ -39,7 +39,7 @@ foreach ($_SESSION['cart'] as $key => $value) {
     $stmt->execute();
     $stmt->close();
 }
-if ($paymentMethod == "paypal") {
+if ($paymentmethodid == 0) {
     $_SESSION['total'] = $total;
     header('location: paypal.php');
 } else {

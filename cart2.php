@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+	
 <?php 
 include ("partials/head.php") 
 ?>
@@ -200,9 +201,6 @@ include ("partials/head.php")
 		</div>
 	</div>
 		
-	
-		
-
 	<!-- Footer -->
 	<?php include ("partials/footer.php") ?>
 
