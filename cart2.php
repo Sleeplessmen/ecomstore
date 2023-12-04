@@ -157,9 +157,9 @@ include ("partials/head.php")
 									</div>
 
                                     <div class="rs1-select2 rs2-select2 bor8 bg0 m-b-22">
-                                        <select class="js-select2" name="payment"required> 
-                                            <option value="cash">Thanh toán bằng tiền mặt</option>
-                                            <option value="paypal">Thanh toán qua PayPal</option>
+                                        <select class="js-select2" name="payment" required> 
+                                            <option value="1">Thanh toán bằng tiền mặt</option>
+                                            <option value="2">Thanh toán qua PayPal</option>
                                         </select>
                                         <div class="dropDownSelect2" style="font-family: 'Open Sans', sans-serif;"></div>
 									</div>

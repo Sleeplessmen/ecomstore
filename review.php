@@ -24,8 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>";
     }
 
-    $currentDateTime = date('Y-m-d H:i:s');
-
     // Insert the review into the database
     $insertReview = $connect->prepare("INSERT INTO reviews (productID, customerID, reviewRating, reviewText, reviewDate) VALUES (?, ?, ?, ?, NOW())");
     $insertReview->bind_param("siis", $productID, $customerID, $rating, $reviewText);

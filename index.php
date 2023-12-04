@@ -52,7 +52,7 @@
 		<div class="row isotope-grid">
 			<?php
 			include("partials/connect.php");
-			$sql = "SELECT * FROM products";
+			$sql = "SELECT * FROM products ORDER BY productID DESC LIMIT 20";
 			$result = $connect->query($sql);
 
 			while ($final = $result->fetch_assoc()) :
@@ -94,7 +94,7 @@
 
 		<!-- Load more -->
 		<div class="flex-c-m flex-w w-full p-t-45">
-			<a href="product.php" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04"
+			<a href="product.php?category=0" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04"
 			style="font-family: 'Open Sans', sans-serif;">
 				Xem thêm
 			</a>
