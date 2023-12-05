@@ -3324,3 +3324,14 @@ input.num-product::-webkit-inner-spin-button {
   }
 
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section,
+.right-section {
+  flex-basis: 48%; /* Adjust the width as needed */
+}
+

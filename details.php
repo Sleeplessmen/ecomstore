@@ -114,61 +114,105 @@
 								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
 									<div class="p-b-30 m-lr-15-sm">
 
-										<?php
-											$sql1 = "SELECT * FROM reviews WHERE productID = '$id' LIMIT 1";
-											$res1 = $connect->query($sql1);
+									<div class="flex-container">
+    								<div class="left-section">
+										<!-- Review -->
+										<h5 class="mtext-108 cl2 p-b-7" style="font-family: 'Open Sans', sans-serif;">
+											Đánh giá sản phẩm
+										</h5>
+									</div>
+									<div class="right-section">
+										 <!-- Display Average Rating -->
+										<div class="average-rating p-b-7" style="font-family: 'Open Sans', sans-serif; font-size: 18px;">
+											<?php
+											$avgQuery = "SELECT AVG(reviewRating) AS averageRating FROM reviews WHERE productID = '$id'";
+											$avgResult = $connect->query($avgQuery);
 
-											if ($res1->num_rows > 0) {
-												// Fetch the review information
-												$final1 = $res1->fetch_assoc();
-											
-												// Fetch customer information for the review
-												$customerID = $final1['customerID'];
-												$sql2 = "SELECT * FROM customers WHERE customerID = '$customerID'";
-												$res2 = $connect->query($sql2);
-											
-												// Check if the customer information is available
-												if ($res2->num_rows > 0) {
-													$final2 = $res2->fetch_assoc();
-												} else {
-													echo "<script> alert('Lỗi 2');
-													window.location.href='details.php?detail_id=" . $id . "';
-													</script>";
+											if ($avgResult->num_rows > 0) {
+												$avgRow = $avgResult->fetch_assoc();
+												$averageRating = $avgRow['averageRating'];
+
+												// Round to the nearest integer for displaying star icons
+												$roundedRating = round($averageRating);
+
+												// Output the average rating as star icons
+												echo '<span class="fs-18 cl11">';
+												if (isset($roundedRating)) {
+													for ($i = 0; $i < $roundedRating; $i++) {
+														echo '<i class="zmdi zmdi-star"></i>';
+													}
 												}
+												echo '</span>';
+												echo " (Average: " . number_format($averageRating, 2) . ")";
 											} else {
+												echo "No ratings found for this product.";
+											}
+											?>
+										</div>
+									</div>
+									</div>
+
+										<?php
+											$sql = "SELECT * FROM reviews WHERE productID = '$id'";
+											$result = $connect->query($sql);
+
+											if ($result->num_rows > 0) {
+												while ($row = $result->fetch_assoc()) {
+													// Fetch customer information for the review
+													$customerID = $row['customerID'];
+													$sqlCustomer = "SELECT * FROM customers WHERE customerID = '$customerID'";
+													$resultCustomer  = $connect->query($sqlCustomer);
+												
+													// Check if the customer information is available
+													if ($resultCustomer->num_rows > 0) {
+														$customerInfo = $resultCustomer->fetch_assoc();
+													} else {
+														echo "<script> alert('Lỗi 2');
+														window.location.href='details.php?detail_id=" . $id . "';
+														</script>";
+													}
+										?>
+											<!-- } else {
 												echo "<script> alert('Lỗi 1
 												window.location.href='details.php?detail_id=" . $id . "';
 												</script>";
 											}					
+										?> -->
+
+											<div class="flex-w flex-t p-t-10 p-b-55">
+												<div class="size-207">
+													<div class="flex-w flex-sb-m p-b-17">
+													<?php if (isset($customerInfo['customerUsername'])) { ?>
+														<span class="mtext-107 cl2 p-r-20" style="font-family: 'Open Sans', sans-serif;">
+															<?php echo $customerInfo['customerUsername']; ?>
+														</span>
+													<?php } ?>
+
+														<span class="fs-18 cl11">
+														<?php if (isset($row['reviewRating'])) {
+															for ($i = 0; $i < $row['reviewRating']; $i++) { ?>
+																<i class="zmdi zmdi-star"></i>
+															<?php }
+														} ?>
+														</span>
+
+													</div>
+													<?php if (isset($row['reviewText'])) { ?>
+														<p class="stext-102 cl6" style="font-family: 'Open Sans', sans-serif; overflow-wrap: break-word;">
+															<?php echo $row['reviewText']; ?>
+														</p>
+													<?php } ?>
+												</div>
+											</div>
+
+										<?php
+											}
+										} else {
+											echo "No reviews found for this product.";
+										}
 										?>
 
 
-										<!-- Review Example-->
-										<h5 class="mtext-108 cl2 p-b-7" style="font-family: 'Open Sans', sans-serif;">
-												Người mua đánh giá
-										</h5>
-
-										<div class="flex-w flex-t p-t-43 p-b-68">
-											<div class="size-207">
-												<div class="flex-w flex-sb-m p-b-17">
-													<span class="mtext-107 cl2 p-r-20" style="font-family: 'Open Sans', sans-serif;">
-														<?php echo $final2['customerUsername'] ?>
-													</span>
-
-													<span class="fs-18 cl11">
-														<?php 
-														for($i = 0; $i < $final1['reviewRating']; $i++) { ?>
-															<i class="zmdi zmdi-star"></i>
-														<?php } ?>
-													</span>
-												</div>
-
-												<p class="stext-102 cl6" style="font-family: 'Open Sans', sans-serif;">
-														<?php echo $final1['reviewText'] ?>
-												</p>
-											</div>
-										</div>
-										
 										<!-- Add review form-->
 										<form action="review.php" method="post" class="w-full">
 											<h5 class="mtext-108 cl2 p-b-7" style="font-family: 'Open Sans', sans-serif;">
@@ -216,3 +260,31 @@
 	<?php include ("partials/footer.php") ?>
 </body>
 </html>
+
+<style>
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-section {
+    	flex-basis: auto; 
+	}
+
+    .right-section {
+    	margin-left: auto;
+	}
+
+	.average-rating {
+    	padding-right: 77px; 
+	}
+
+	.fs-18.cl11 {
+    	font-size: 0; 
+	}
+
+	.fs-18.cl11 i {
+    	font-size: 18px; /* Reset the font-size for the stars */
+    	margin-right: 0; /* Remove any right margin between stars */
+	}
+</style>
