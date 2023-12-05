@@ -53,18 +53,27 @@
 
 
 				<?php
+				$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                $productsPerPage = 20;
+
 				if (isset($_GET['category'])) {
 					$categoryID = $_GET['category'];
+
 					if($categoryID == 0) {
 						$sqlProducts = "SELECT * 
 										FROM products 
-										ORDER BY updated_at DESC ";
+										ORDER BY updated_at DESC";
+					 $totalProducts = $connect->query("SELECT COUNT(*) as total FROM products")->fetch_assoc()['total'];
+					 $totalPages = ceil($totalProducts / $productsPerPage);
+					 $offset = ($currentPage - 1) * $productsPerPage;
+					 $sqlProducts .= " LIMIT $offset, $productsPerPage";
 					} else {
 						$sqlProducts = "SELECT * 
 										FROM products 
 										WHERE categoryID = $categoryID
 										ORDER BY updated_at DESC";
 					}
+
 					// Modify this part based on your database schema
 					$resultProducts = $connect->query($sqlProducts);
 					// Display the products
@@ -99,10 +108,23 @@
 				</div>
 
 				<?php endwhile; } ?>
+
+				<?php if($categoryID == 0) { ?>
+				<div class="container mt-4">
+					<ul class="pagination justify-content-center">
+						<?php for ($page = 1; $page <= $totalPages; $page++) : ?>
+							<li class="page-item <?php echo $currentPage == $page ? 'active' : ''; ?>">
+								<a class="page-link" href="?category=<?php echo $categoryID; ?>&page=<?php echo $page; ?>"><?php echo $page; ?></a>
+							</li>
+						<?php endfor; ?>
+					</ul>
+				</div> <?php } ?>
 			
 			</div>
 		</div>
 	</div>
+	
+	
 		
 
 	<!-- Footer -->
