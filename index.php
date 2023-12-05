@@ -13,46 +13,23 @@
 
 	<!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">
-		<div class="container">
-			<div class="p-b-10">
-				<h3 class="ltext-103 cl5" style="font-family: 'Open Sans', sans-serif;">
-					Tổng quan về sản phẩm
-				</h3>
-			</div>
+	<div class="container">
 
-			<div class="flex-w flex-sb-m p-b-52">
-				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" 
-					style="font-family: 'Open Sans', sans-serif;" data-filter="*">
-						<strong>Tất cả sản phẩm</strong>
-					</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" 
-					style="font-family: 'Open Sans', sans-serif;" data-filter=".1">
-						<strong>Đồ Chơi<strong>
-					</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" 
-					style="font-family: 'Open Sans', sans-serif;" data-filter=".2">
-						<strong>Phương Tiện Di Chuyển</strong>
-					</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" 
-					style="font-family: 'Open Sans', sans-serif;" data-filter=".3">
-						<strong>Đồ Điện Tử</strong>
-					</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" 
-					style="font-family: 'Open Sans', sans-serif;" data-filter=".4">
-						<strong>Nhà Sách Online</strong>
-					</button>
-				</div>
-			</div>
+		<div class="p-b-10">
+			<h4 class="ltext-103 cl5" style="font-family: 'Open Sans', sans-serif;">
+				Dành riêng cho bạn
+			</h4>
+		</div>
 
 		<div class="row isotope-grid">
 			<?php
 			include("partials/connect.php");
-			$sql = "SELECT * FROM products ORDER BY productID DESC LIMIT 20";
+			$sql = "SELECT p.*
+					FROM products p
+					JOIN orderdetails od ON od.itemID = p.productID
+					GROUP BY p.productID 
+					ORDER BY SUM(od.quantity) DESC
+					LIMIT 20 ";
 			$result = $connect->query($sql);
 
 			while ($final = $result->fetch_assoc()) :
@@ -99,6 +76,7 @@
 				Xem thêm
 			</a>
 		</div>
+
 	</div>
 	</section>
 	

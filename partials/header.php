@@ -36,7 +36,7 @@ session_start();
 					
 					<!-- Logo desktop -->		
 					<a href="index.php" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="images/icons/logo-03.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -89,7 +89,7 @@ session_start();
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.php"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.php"><img src="images/icons/logo-03.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->

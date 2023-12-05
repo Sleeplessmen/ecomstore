@@ -9,7 +9,7 @@
 	<?php include ("partials/header.php") ?>
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bktest.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/contact_bk.jpg');">
 		<h2 class="ltext-105 cl0 txt-center" style="font-family: 'Open Sans', sans-serif;">
 			Liên hệ
 		</h2>
@@ -94,9 +94,38 @@
 	
 	
 	<!-- Map -->
-	<div class="map">
+	<!-- <div class="map">
 		<div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
+	</div> -->
+
+	<!-- Include the Google Maps API script -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+	<!-- Map -->
+	<div class="map">
+		<div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="images/icons/pin.png" data-scrollwheel="0" data-draggable="1" data-zoom="11"></div>
 	</div>
+
+	<script>
+		// Initialize the map when the page loads
+		function initMap() {
+			var mapOptions = {
+				center: new google.maps.LatLng(40.691446, -73.886787),
+				zoom: 11,
+				scrollwheel: false,
+				draggable: true
+			};
+			var map = new google.maps.Map(document.getElementById('google_map'), mapOptions);
+			var marker = new google.maps.Marker({
+				position: mapOptions.center,
+				map: map,
+				icon: 'images/icons/pin.png' // Path to your pin icon
+			});
+		}
+		// Call the initMap function after the Google Maps API script is loaded
+		google.maps.event.addDomListener(window, 'load', initMap);
+	</script>
+
 
 	<!-- Footer -->
 	<?php include("partials/footer.php"); ?>
