@@ -9,7 +9,7 @@
 	<?php include ("partials/header.php") ?>
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/log_bk.jpg');">
 		<h2 class="ltext-105 cl0 txt-center" style="font-family: 'Open Sans', sans-serif;">
 			Đăng nhập/Đăng Ký
 		</h2>
@@ -70,12 +70,6 @@
 			</div>
 		</div>
 	</section>	
-	
-	
-	<!-- Map -->
-	<div class="map">
-		<div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
-	</div>
 
 	<!-- Footer -->
 	<?php include("partials/footer.php"); ?>

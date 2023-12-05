@@ -56,9 +56,14 @@
 				if (isset($_GET['category'])) {
 					$categoryID = $_GET['category'];
 					if($categoryID == 0) {
-						$sqlProducts = "SELECT * FROM products";
+						$sqlProducts = "SELECT * 
+										FROM products 
+										ORDER BY updated_at DESC ";
 					} else {
-						$sqlProducts = "SELECT * FROM products WHERE categoryID = $categoryID";
+						$sqlProducts = "SELECT * 
+										FROM products 
+										WHERE categoryID = $categoryID
+										ORDER BY updated_at DESC";
 					}
 					// Modify this part based on your database schema
 					$resultProducts = $connect->query($sqlProducts);
