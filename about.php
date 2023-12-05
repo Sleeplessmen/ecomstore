@@ -21,17 +21,12 @@
 				<div class="col-md-7 col-lg-8">
 					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
 						<h3 class="mtext-111 cl2 p-b-16" style="font-family: 'Open Sans', sans-serif;">
-							Câu chuyên của chúng tôi
+							Về chúng tôi
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26" style="font-family: 'Open Sans', sans-serif;">
-						Chào mừng bạn đến với thế giới của chúng tôi! Hành trình của chúng tôi bắt đầu với niềm đam mê cung cấp các sản phẩm chất lượng cao và dịch vụ xuất sắc. Cam kết của chúng tôi là tạo ra trải nghiệm đáng nhớ cho bạn khi ở bên chúng tôi.						</p>
+						Đây là một dự án E-commerce Website cho môn cơ sở dữ liệu. Được tạo nên bởi Nguyễn Việt Quang, Nguyễn Công Khải và Lê Công Hoàng						</p>
 
-						<p class="stext-113 cl6 p-b-26" style="font-family: 'Open Sans', sans-serif;">
-						Tại trái tim của chúng tôi, chúng tôi tin vào sức mạnh của việc kết nối con người thông qua những trải nghiệm ý nghĩa. Từ những ngày đầu thành lập, chúng tôi đã tận tâm giao hàng những sản phẩm làm phong phú cuộc sống và khuyến khích tinh thần cộng đồng.						</p>
-
-						<p class="stext-113 cl6 p-b-26" style="font-family: 'Open Sans', sans-serif;">
-						Có câu hỏi hoặc cần sự hỗ trợ? Đừng ngần ngại liên lạc với chúng tôi tại Tầng 12, Tòa nhà Capital Building, số 41 Hai Bà Trưng, Phường Tràng Tiền, Quận Hoàn Kiếm, Hà Nội, hoặc gọi cho chúng tôi theo số (+84) 867578422. Chúng tôi ở đây để hỗ trợ bạn!						</p>
 					</div>
 				</div>
 
@@ -48,11 +43,11 @@
 				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
 					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
 						<h3 class="mtext-111 cl2 p-b-16" style="font-family: 'Open Sans', sans-serif;">
-							Sứ mệnh của chúng tôi
+							Mục đích
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26" style="font-family: 'Open Sans', sans-serif;">
-						Sứ mệnh của chúng tôi là truyền cảm hứng và làm hài lòng khách hàng bằng cách tổ chức một bộ sưu tập sản phẩm thể hiện chất lượng, sáng tạo và phong cách. Chúng tôi cố gắng tạo ra một trải nghiệm mua sắm liền mạch vượt ra khỏi các giao dịch đơn thuần, nuôi dưỡng một mối quan hệ lâu dài với khách hàng quý báu của chúng tôi.						</p>
+						Bán những thứ hài hước						</p>
 
 						<div class="bor16 p-l-29 p-b-9 m-t-22">
 							<p class="stext-114 cl6 p-r-40 p-b-11" style="font-family: 'Open Sans', sans-serif;">
