@@ -14,8 +14,10 @@
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 					<form method="GET" action="product.php" class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" name="category" value="0">
-						All Products
+					<h1 class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" name="category" value="0" style="font-family: 'Open Sans', sans-serif;">
+					Danh mục:</h1>
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" name="category" value="0" style="font-family: 'Open Sans', sans-serif;">
+						Tất Cả Sản Phẩm
 					</button>
 
 					<?php
@@ -28,9 +30,10 @@
 					while ($rowCategory = $resultCategories->fetch_assoc()) : 
 						$categoryID = $rowCategory['categoryID'];
 						$categoryname = $rowCategory['categoryName'];
+						$selectedCat = isset($_GET['category']) && $_GET['category'] == $categoryID ? 'font-weight-bold' : '';
 					?>
 
-					<button type="submit" style="font-family: Open Sans, sans-serif;" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" name="category" value="<?php echo $categoryID ?>">
+					<button type="submit" style="font-family: Open Sans, sans-serif;" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <?php echo $selectedCat; ?>" name="category" value="<?php echo $categoryID ?>">
 						<?php echo $categoryname ?>
 					</button>
 

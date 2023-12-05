@@ -48,7 +48,7 @@ session_start();
 							</li>
 
 							<li>
-								<a href="product.php?page=1" style="font-family: 'Open Sans', sans-serif;">Cửa hàng</a>
+								<a href="product.php?category=0" style="font-family: 'Open Sans', sans-serif;">Cửa hàng</a>
 							</li> 
 
 							<li>
