@@ -17,16 +17,19 @@ if ($password == $confirmpassword) {
     if ($result->num_rows == 0) {
         // Email doesn't exist, proceed to insert
         // Get the current date and time
-    $currentDateTime = date('Y-m-d H:i:s');
+        $currentDateTime = date('Y-m-d H:i:s');
+        
+        // Hash the password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO customers (customerUsername, customerPassword, phone, created_at, updated_at) 
-            VALUES ('$email', '$password', '$phone', '$currentDateTime', '$currentDateTime')";
-    $connect->query($sql);
+        $sql = "INSERT INTO customers (customerUsername, customerPassword, phone, created_at, updated_at) 
+                VALUES ('$email', '$hashedPassword', '$phone', '$currentDateTime', '$currentDateTime')";
+        $connect->query($sql);
 
         session_start();
         $_SESSION['customer_id'] = $email;
         // $_SESSION['customer_phone'] = $phone;
-        $_SESSION['customer_username'] = $password;
+        $_SESSION['customer_username'] = $hashedPassword; // Store hashed password in session (not recommended, see note below)
         // Redirect to customerforms.php
         header('location: ../index.php');
     } else {
