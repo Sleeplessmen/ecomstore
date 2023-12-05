@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 include("partials/connect.php");
@@ -8,7 +7,7 @@ include("partials/connect.php");
 if (isset($_SESSION['cart'])) {
     $checker=array_column($_SESSION['cart'], 'name');
     if(in_array($_GET['name'], $checker)) {
-        echo "<script>alert('Product is already in the cart');
+        echo "<script>alert('Sản phẩm đã có sẳn trong giỏ hàng.');
         window.location.href='product.php';
         </script>";
     } 
@@ -23,17 +22,17 @@ if (isset($_SESSION['cart'])) {
     'quantity'=>1);
 
     // Insert the item into the database table
-    $insert_query = "INSERT INTO carts (customerID, itemID, itemName, itemPrice, itemQuantity) VALUES ('{$_SESSION['customer_id']}', ?, ?, ?, 1)";
+    $insert_query = "INSERT INTO carts (customerID, itemID, itemName, itemPrice, itemQuantity) VALUES (?, ?, ?, ?, 1)";
     $stmt = $connect->prepare($insert_query);
-    $stmt->bind_param("ssi", $_GET['item_id'], $_GET['name'], $_GET['price']);
+    $stmt->bind_param("issi", $_SESSION['customer_id'], $_GET['item_id'], $_GET['name'], $_GET['price']);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Product added');
+        echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');
         window.location.href='cart.php';
         </script>";
     } else {
-        echo "<script>alert('Error adding product to the carts table');
-        window.location.href='product.php';
+        echo "<script>alert('Lỗi xảy ra khi thêm sản phẩm vào giỏ hàng');
+        window.location.href='product.php?category=0';
         </script>";
     }
 
@@ -48,17 +47,17 @@ if (isset($_SESSION['cart'])) {
         'quantity'=>1);
     
     // Insert the item into the database table
-    $insert_query = "INSERT INTO carts (customerID, itemID, itemName, itemPrice, itemQuantity) VALUES ('{$_SESSION['customer_id']}', ?, ?, ?, 1)";
+    $insert_query = "INSERT INTO carts (customerID, itemID, itemName, itemPrice, itemQuantity) VALUES (?, ?, ?, ?, 1)";
     $stmt = $connect->prepare($insert_query);
-    $stmt->bind_param("ssi", $_GET['item_id'], $_GET['name'], $_GET['price']);
+    $stmt->bind_param("issi", $_SESSION['customer_id'], $_GET['item_id'], $_GET['name'], $_GET['price']);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Product added');
+        echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');
         window.location.href='cart.php';
         </script>";
     } else {
-        echo "<script>alert('Error adding product to the carts table');
-        window.location.href='product.php';
+        echo "<script>alert('Lỗi xảy ra khi thêm sản phẩm vào giỏ hàng');
+        window.location.href='product.php?category=0';
         </script>";
     }
 

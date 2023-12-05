@@ -2,8 +2,14 @@
 
 session_start();
 include("../partials/connect.php");
-
-$customerID = $_SESSION['customer_id'];
+if(isset($_SESSION['customer_id'])) {
+    $customerID = $_SESSION['customer_id'];
+} else {
+    echo "<script>
+    alert('Bạn cần đăng ký hoặc đăng nhập tài khoản để mua hàng.');
+    window.location.href='../customerforms.php';
+    </script>";
+}
 $address = $_POST['address'];
 $postcode = $_POST['postcode'];
 $phone = $_POST['phone'];
@@ -43,7 +49,7 @@ if ($paymentmethodid == 0) {
     $_SESSION['total'] = $total;
     header('location: paypal.php');
 } else {
-    echo "<script> alert('Order is placed.');
+    echo "<script> alert('Đơn hàng đã được đặt thành công.');
     window.location.href='../index.php';
     </script>";
 }

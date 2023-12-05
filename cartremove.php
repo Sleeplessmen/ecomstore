@@ -18,12 +18,12 @@ if(isset($_POST['remove'])) {
 
             if ($stmt) {
                 echo "<script>
-                    alert('Item removed');
+                    alert('Đã xóa sản phẩm khỏi giỏ hàng');
                     window.location.href='cart.php';
                 </script>";
             } else {
                 echo "<script>
-                    alert('Error removing item from cart');
+                    alert('Lỗi xảy ra khi xóa sản phẩm khỏi giỏ hàng');
                     window.location.href='cart.php';
                 </script>";
             }

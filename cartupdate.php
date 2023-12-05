@@ -15,7 +15,10 @@ if (isset($_POST['quantity']) && isset($_POST['item_id'])) {
             if ($connect->query($sql)) {
                 header("Location: cart.php");
             } else {
-                echo "Error updating quantity in the database: " . $conn->error;
+                echo "<script>
+                alert('Lỗi xảy ra khi cập nhật số lượng sản phẩm: ' . $conn->error);
+                window.location.href='cart.php';
+            </script>";
             }
         }
     }

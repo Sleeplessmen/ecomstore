@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost:3306";
+$host = "localhost:3307";
 $user = "root";
-$password = "123456789";
-$dbname = "web";
+$password = "";
+$dbname = "ecomstore";
 
 $connect = mysqli_connect($host, $user, $password, $dbname);
 
