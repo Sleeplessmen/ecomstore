@@ -95,10 +95,8 @@ include ("partials/head.php")
 						</div>
 						<?php } ?>
 
-						<p class="stext-110 m-t-20 m-b-20 text-center" style="font-family: 'Open Sans', sans-serif;"><a href="product.php">
+						<p class="stext-110 m-t-20 m-b-20 text-center" style="font-family: 'Open Sans', sans-serif;"><a href="product.php?category=0">
 							<button>
-								<!-- You can use an icon from a library like Font Awesome -->
-								<!-- Example using Font Awesome's arrow-left icon -->
 								<i class="fa fa-reply"></i>
 								Tiếp tục mua hàng
 							</button>
