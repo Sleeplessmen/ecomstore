@@ -46,15 +46,20 @@ foreach ($_SESSION['cart'] as $key => $value) {
     $stmt->execute();
     $stmt->close();
 }
-if ($paymentmethodid == 0) {
+
+$deleteCartQuery = "DELETE FROM carts WHERE customerID = ?";
+$stmt = $connect->prepare($deleteCartQuery);
+$stmt->bind_param("i", $customerID);
+$stmt->execute();
+$stmt->close();
+
+if ($paymentmethodid == 2) {
     $_SESSION['total'] = $total;
     header('location: paypal.php');
-    exit();
 } else {
     echo "<script> alert('Đơn hàng đã được đặt thành công.');
     window.location.href='../index.php';
     </script>";
-    exit();
 }
 
 // Clear the cart after the order is placed
