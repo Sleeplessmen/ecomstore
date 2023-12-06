@@ -67,6 +67,8 @@ session_start();
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
 							<i class="zmdi zmdi-search"></i>
 						</div>
+						
+
 
 						<!-- Cart Icon -->
 						<?php 
@@ -152,12 +154,28 @@ session_start();
 					<img src="images/icons/icon-close2.png" alt="CLOSE">
 				</button>
 
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
+				<form class="wrap-search-header flex-w p-l-15" id="searchForm">
+					<button class="flex-c-m trans-04" type="submit">
 						<i class="zmdi zmdi-search"></i>
 					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
+					<input class="plh3" type="text" name="search" id="searchInput" placeholder="Search...">
 				</form>
+
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+						const searchForm = document.getElementById('searchForm');
+						searchForm.addEventListener('submit', function(event) {
+							event.preventDefault(); // Prevent form submission
+
+							const searchTerm = document.getElementById('searchInput').value.trim();
+							if (searchTerm !== "") {
+								const encodedSearchTerm = encodeURIComponent(searchTerm);
+								// Redirect to the desired URL
+								window.location.href = 'http://localhost/ecomstore/product.php?search-product=' + encodedSearchTerm;
+							}
+						});
+					});
+				</script>
 			</div>
 		</div>
 
