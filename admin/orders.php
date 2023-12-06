@@ -33,8 +33,14 @@ include("admin_partials/head.php");
                     <div class="col-md-12">
                         <?php
                         include('../partials/connect.php');
+<<<<<<< Updated upstream
                         $sql = "SELECT o.orderID, c.customerUsername, o.status, o.total_amount, o.created_at FROM orders o
                         INNER JOIN customers c ON c.customerID = o.customerID";
+=======
+                        $sql = "SELECT o.orderID, c.customerUsername, o.status, o.total_amount, o.created_at 
+                                FROM orders o
+                                INNER JOIN customers c ON c.customerID = o.customerID";
+>>>>>>> Stashed changes
                         $stmt = $connect->prepare($sql);
                         $stmt->execute();
                         $result = $stmt->get_result();
