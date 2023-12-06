@@ -34,18 +34,35 @@ include("admin_partials/head.php");
                             <div class="box-body" style="font-family: 'Open Sans', sans-serif;">
                                 <!-- Your content goes here -->
                                 <div class="row">
+                                    <?php
+                                    include('../partials/connect.php');
+
+                                    $query = "SELECT COUNT(*) AS processing_orders 
+                                              FROM orders 
+                                              WHERE status = 'Processing'";
+                                    $result = $connect->query($query);
+
+                                    if ($result) {
+                                        $row = $result->fetch_assoc();
+                                        $processingOrders = $row['processing_orders'];
+                                    } else {
+                                        $processingOrders = 0;
+                                    }
+
+                                    $connect->close();
+                                    ?>
+
                                     <div class="col-lg-3 col-xs-6">
-                                    <!-- small box -->
                                         <div class="small-box bg-aqua">
                                             <div class="inner">
-                                            <h3 style="font-family: 'Open Sans', sans-serif;">150</h3>
-                                            <p style="font-family: 'Open Sans', sans-serif;">Đơn hàng mới</p>
+                                                <h3 style="font-family: 'Open Sans', sans-serif;"><?php echo $processingOrders; ?></h3>
+                                                <p style="font-family: 'Open Sans', sans-serif;">Đơn hàng chưa hoàn thành</p>
                                             </div>
                                             <div class="icon">
-                                            <i class="fa fa-shopping-cart"></i>
+                                                <i class="fa fa-shopping-cart"></i>
                                             </div>
                                             <a href="orders.php" class="small-box-footer" style="font-family: 'Open Sans', sans-serif;">
-                                            Xem thêm <i class="fa fa-arrow-circle-right"></i>
+                                                Xem thêm <i class="fa fa-arrow-circle-right"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -65,10 +82,26 @@ include("admin_partials/head.php");
                                         </div>
                                     </div>
                                     
+                                    <?php
+                                    include('../partials/connect.php');
+
+                                    $query = "SELECT COUNT(*) AS account 
+                                              FROM customers";
+                                    $result = $connect->query($query);
+
+                                    if ($result) {
+                                        $row = $result->fetch_assoc();
+                                        $processingOrders = $row['account'];
+                                    } else {
+                                        $processingOrders = 0;
+                                    }
+
+                                    $connect->close();
+                                    ?>
                                     <div class="col-lg-3 col-xs-6">
                                         <div class="small-box bg-yellow">
                                             <div class="inner">
-                                            <h3 style="font-family: 'Open Sans', sans-serif;">44</h3>
+                                            <h3 style="font-family: 'Open Sans', sans-serif;"><?php echo $processingOrders; ?></h3>
                                             <p style="font-family: 'Open Sans', sans-serif;">Số lượng người dùng đăng ký</p>
                                             </div>
                                             <div class="icon">
