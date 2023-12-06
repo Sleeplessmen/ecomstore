@@ -34,8 +34,7 @@ include("admin_partials/head.php");
                         <?php
                         include('../partials/connect.php');
                         $sql = "SELECT o.orderID, c.customerUsername, o.status, o.total_amount, o.created_at FROM orders o
-                        INNER JOIN customers c ON c.customerID = o.customerID
-                        limit 20";
+                        INNER JOIN customers c ON c.customerID = o.customerID";
                         $stmt = $connect->prepare($sql);
                         $stmt->execute();
                         $result = $stmt->get_result();
@@ -63,7 +62,7 @@ include("admin_partials/head.php");
                                         <td style="font-family: 'Open Sans', sans-serif;"><?php echo $order['created_at']; ?></td>
                                         <td>
                                             <a href="view_order.php?id=<?php echo $order['orderID']; ?>" class="btn btn-info btn-sm" style="font-family: 'Open Sans', sans-serif;">Xem chi tiết</a>
-                                            <a href="edit_order.php?id=<?php echo $order['orderID']; ?>" class="btn btn-warning btn-sm" style="font-family: 'Open Sans', sans-serif;">Sửa đơn hàng</a>
+                                            <a href="delete_order.php?id=<?php echo $order['orderID']; ?>" class="btn btn-warning btn-sm" style="font-family: 'Open Sans', sans-serif;">Xóa đơn hàng</a>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>

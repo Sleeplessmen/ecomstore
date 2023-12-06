@@ -54,7 +54,7 @@ include ("partials/head.php")
 									foreach ($_SESSION['cart'] as $key => $value) {
 									$subtotal=$value['price'] * $value['quantity'];
 									$total+=$subtotal; 
-										
+			
 								?>
 
 								<tr class="table_row">
