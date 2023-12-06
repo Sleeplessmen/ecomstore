@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('../partials/connect.php');
 
 $email = $_POST['email'];
@@ -18,7 +18,6 @@ if ($password == $confirmpassword) {
         // Email doesn't exist, proceed to insert
         // Get the current date and time
         $currentDateTime = date('Y-m-d H:i:s');
-        
         // Hash the password
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -32,11 +31,8 @@ if ($password == $confirmpassword) {
         $res = $stmt->get_result();
         $final = $res->fetch_assoc();
 
-        session_start();
         $_SESSION['customer_id'] = $final['customerID'];
-        // $_SESSION['customer_phone'] = $phone;
-        $_SESSION['customer_username'] = $email; // Store hashed password in session (not recommended, see note below)
-        // Redirect to customerforms.php
+        $_SESSION['customer_username'] = $final['customerUsername']; 
         header('location: ../index.php');
     } else {
         // Email already exists
