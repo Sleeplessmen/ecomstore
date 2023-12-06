@@ -27,11 +27,11 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Tên đăng nhập" style="font-family: 'Open Sans', sans-serif;">
+							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Tên đăng nhập" style="font-family: 'Open Sans', sans-serif;" required>
 						</div>
 
 						<div class="bor8 m-b-30">
-                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Mật khẩu" style="font-family: 'Open Sans', sans-serif;" >
+                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Mật khẩu" style="font-family: 'Open Sans', sans-serif;" required>
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" style="font-family: 'Open Sans', sans-serif;" name="login">
@@ -47,19 +47,19 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Tên đăng nhập" style="font-family: 'Open Sans', sans-serif;">
+							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="email" placeholder="Tên đăng nhập" style="font-family: 'Open Sans', sans-serif;" required>
 						</div>
 
 						<div class="bor8 m-b-20">
-							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="phone" placeholder="Số điện thoại của bạn" style="font-family: 'Open Sans', sans-serif;">
+							<input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="text" name="phone" placeholder="Số điện thoại của bạn" style="font-family: 'Open Sans', sans-serif;" required>
 						</div>
 
 						<div class="bor8 m-b-20">
-                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Mật khẩu" style="font-family: 'Open Sans', sans-serif;">
+                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="password" placeholder="Mật khẩu" style="font-family: 'Open Sans', sans-serif;" required>
 						</div>
 
                         <div class="bor8 m-b-30">
-                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="confirmpassword" placeholder="Nhập lại mật khẩu" style="font-family: 'Open Sans', sans-serif;">
+                            <input class="stext-111 cl2 plh3 size-116 p-l-20 p-r-30" type="password" name="confirmpassword" placeholder="Nhập lại mật khẩu" style="font-family: 'Open Sans', sans-serif;" required>
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" style="font-family: 'Open Sans', sans-serif;">

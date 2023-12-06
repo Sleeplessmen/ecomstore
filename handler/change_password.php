@@ -10,6 +10,7 @@ if (isset($_POST['change'])) {
         alert('Mật khẩu không khớp');
         window.location.href='../customerforms.php';
         </script>";
+        exit();
     }
     include("../partials/connect.php");
 
@@ -24,6 +25,7 @@ if (isset($_POST['change'])) {
         alert('Tên đăng nhập không tồn tại');
         window.location.href='../customerforms.php';
         </script>";
+        exit();
     }
 
     $sql ="update customers set customerPassword = '{$hashedPassword}' where customerUsername = '{$email}'";
@@ -41,12 +43,14 @@ if (isset($_POST['change'])) {
         alert('Đổi mật khẩu thành công');
         window.location.href='../customerforms.php';
         </script>";
+        exit();
 
     } else {
         echo "<script>
         alert('Lỗi');
         window.location.href='../customerforms.php';
         </script>";
+        exit();
     }
 }
 }

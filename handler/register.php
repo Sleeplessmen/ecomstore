@@ -35,15 +35,17 @@ if ($password == $confirmpassword) {
     } else {
         // Email already exists
         echo "<script>
-            alert('Tên đăng nhập đã tồn tại');
-            window.location.href='../customerforms.php';
+        alert('Tên đăng nhập đã tồn tại');
+        window.location.href='../customerforms.php';
         </script>";
+        exit();
     }
 } else {
     // Passwords don't match
     echo "<script>
-        alert('Mật khẩu không đúng');
-        window.location.href='../customerforms.php';
+    alert('Mật khẩu không đúng');
+    window.location.href='../customerforms.php';
     </script>";
+    exit();
 }
 ?>

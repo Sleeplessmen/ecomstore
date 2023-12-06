@@ -9,6 +9,7 @@ if(isset($_SESSION['customer_id'])) {
     alert('Bạn cần đăng ký hoặc đăng nhập tài khoản để mua hàng.');
     window.location.href='../customerforms.php';
     </script>";
+    exit();
 }
 $address = $_POST['address'];
 $postcode = $_POST['postcode'];
@@ -48,10 +49,12 @@ foreach ($_SESSION['cart'] as $key => $value) {
 if ($paymentmethodid == 0) {
     $_SESSION['total'] = $total;
     header('location: paypal.php');
+    exit();
 } else {
     echo "<script> alert('Đơn hàng đã được đặt thành công.');
     window.location.href='../index.php';
     </script>";
+    exit();
 }
 
 // Clear the cart after the order is placed

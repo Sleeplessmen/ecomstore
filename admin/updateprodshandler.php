@@ -22,10 +22,12 @@ if(isset($_POST['update'])) {
         echo "<script>alert('Thêm sản phẩm thành công');
         window.location.href='showproducts.php';
         </script>";
+        exit();
     } else {
         echo "<script>alert('Lỗi xảy ra');
         window.location.href='showcategories.php';
         </script>";
+        exit();
     }
 
 }

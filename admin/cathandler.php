@@ -12,15 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('Thêm danh mục thành công');
         window.location.href='showcategories.php';
         </script>";
+        exit();
     } else {
         echo "<script>alert('Lỗi xảy ra: ' . $query . '<br>' . mysqli_error($connect));
         window.location.href='showcategories.php';
         </script>";
+        exit();
     }
 } else {
     echo "<script>alert('Yêu cầu không hợp lý');
     window.location.href='showcategories.php';
     </script>";
+    exit();
 }
 
 

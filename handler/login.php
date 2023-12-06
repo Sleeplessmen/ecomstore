@@ -22,11 +22,13 @@ if (isset($_POST['login'])) {
         $_SESSION['customer_username'] = $final['customerUsername'];
         // Redirect to cart.php
         header('Location: ../index.php');
+        exit();
     } else {
         echo "<script>
         alert('Tên đăng nhập hoặc mật khẩu không đúng');
         window.location.href='../customerforms.php';
         </script>";
+        exit();
     }
 }
 ?>

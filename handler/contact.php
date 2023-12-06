@@ -10,10 +10,12 @@ if($connect->query($sql)) {
     echo "<script>alert('Đã gửi thư thành công');
     window.location.href='../index.php';
     </script>";
+    exit();
 } else {
     echo "<script>alert('Lỗi xảy ra');
     window.location.href='contact.php';
     </script>";
+    exit();
 }
 
 
