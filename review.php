@@ -7,6 +7,7 @@ if(empty($_SESSION['customer_id'])) {
     echo "<script> alert('Bạn cần đăng nhập hoặc đăng ký để đánh giá');
     window.location.href='customerforms.php';
     </script>";
+    exit();
 }
 
 // Check if the form is submitted
@@ -33,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script> alert('Đánh giá không được để trống.');
             window.location.href='details.php?detail_id=$productID';
             </script>";
+            exit();
         }
 
         // Insert the review into the database
@@ -44,10 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script> alert('Thêm đánh giá thành công');
             window.location.href='details.php?detail_id=$productID';
             </script>";
+            exit();
         } else {
             echo "<script> alert('Lỗi xảy ra khi thêm đánh giá: ' . $insertReview->error);
             window.location.href='details.php?detail_id=$productID';
             </script>";
+            exit();
         }
 
         // Close the prepared statement
@@ -56,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script> alert('Không tìm thấy thông tin khách hàng');
         window.location.href='details.php?detail_id=$productID';
         </script>";
+        exit();
     }
 
     $fetchCustomerId->close();

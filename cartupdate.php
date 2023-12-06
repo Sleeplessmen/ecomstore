@@ -14,11 +14,13 @@ if (isset($_POST['quantity']) && isset($_POST['item_id'])) {
             $sql = "UPDATE carts SET itemQuantity = '$qty' WHERE itemID = '$itemid' AND customerID = '{$_SESSION['customer_id']}'";
             if ($connect->query($sql)) {
                 header("Location: cart.php");
+                exit();
             } else {
                 echo "<script>
                 alert('Lỗi xảy ra khi cập nhật số lượng sản phẩm: ' . $conn->error);
                 window.location.href='cart.php';
-            </script>";
+                </script>";
+                exit();
             }
         }
     }

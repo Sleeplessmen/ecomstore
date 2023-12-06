@@ -24,6 +24,7 @@ if (isset($_POST['remove'])) {
                     alert('Lỗi xảy ra khi xóa sản phẩm khỏi giỏ hàng');
                     window.location.href='cart.php';
                 </script>";
+                exit();
             }
 
             $stmt->close();
