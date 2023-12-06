@@ -1,7 +1,13 @@
 <?php
 session_start();
-
 include("partials/connect.php");
+
+if(empty($_SESSION['customer_id'])) {
+    echo "<script>alert('Bạn cần đăng ký hoặc đăng nhập để thêm sản phẩm vào giỏ hàng');
+        window.location.href='customerforms.php';
+        </script>";
+    exit();
+}
 
 // Check if 'cart' session variable is set
 if (isset($_SESSION['cart'])) {
@@ -17,22 +23,21 @@ if (isset($_SESSION['cart'])) {
         $update_stmt = $connect->prepare($update_query);
         $update_stmt->bind_param("is", $_SESSION['customer_id'], $_GET['item_id']);
 
-        try {
-            if ($update_stmt->execute()) {
-                echo "<script>alert('Đã thêm một sản phẩm vào giỏ hàng');
-                window.location.href='details.php?detail_id=". $_GET['item_id'] . "';
-                </script>";
-            } else {
-                echo "<script>alert('Lỗi xảy ra khi cập nhật giỏ hàng');
-                window.location.href='product.php?category=0';
-                </script>";
-            }
-            $update_stmt->close();
-        } catch (mysqli_sql_exception $e) {
-            // Catch any SQL exceptions and retrieve the error message
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        if ($update_stmt->execute()) {
+            echo "<script>alert('Sản phẩm đã có trong giỏ hàng');
+            window.location.href='cart.php';
+            </script>";
+            exit();
+        } else {
+            echo "<script>alert('Lỗi xảy ra khi cập nhật giỏ hàng');
+            window.location.href='details.php?detail_id=". $_GET['item_id'] . "';
+            </script>";
+            exit();
         }
-    } else {
+
+        $update_stmt->close();
+    }
+     else {
         // If there are already some items in the cart
         $count = count($_SESSION['cart']);
         $_SESSION['cart'][$count] = array(
@@ -47,21 +52,18 @@ if (isset($_SESSION['cart'])) {
         $insert_stmt = $connect->prepare($insert_query);
         $insert_stmt->bind_param("issi", $_SESSION['customer_id'], $_GET['item_id'], $_GET['name'], $_GET['price']);
 
-        try {
-            if ($insert_stmt->execute()) {
-                echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');
-                window.location.href='details.php?detail_id=". $_GET['item_id'] . "';
-                </script>";
-            } else {
-                echo "<script>alert('Lỗi xảy ra khi thêm sản phẩm vào giỏ hàng');
-                window.location.href='product.php?category=0';
-                </script>";
-            }
-            $insert_stmt->close();
-        } catch (mysqli_sql_exception $e) {
-            // Catch any SQL exceptions and retrieve the error message
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        if ($insert_stmt->execute()) {
+            echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');
+            window.location.href='cart.php';
+            </script>";
+            exit();
+        } else {
+            echo "<script>alert('Lỗi xảy ra khi thêm sản phẩm vào giỏ hàng');
+            window.location.href='details.php?detail_id=". $_GET['item_id'] . "';
+            </script>";
+            exit();
         }
+        $insert_stmt->close();  
     }
 } else {
     // If it's the first item in the cart
@@ -77,21 +79,20 @@ if (isset($_SESSION['cart'])) {
     $insert_stmt = $connect->prepare($insert_query);
     $insert_stmt->bind_param("issi", $_SESSION['customer_id'], $_GET['item_id'], $_GET['name'], $_GET['price']);
 
-    try {
-        if ($insert_stmt->execute()) {
-            echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');
-            window.location.href='cart.php';
-            </script>";
-        } else {
-            echo "<script>alert('Lỗi xảy ra khi thêm sản phẩm vào giỏ hàng');
-            window.location.href='product.php?category=0';
-            </script>";
-        }
-        $insert_stmt->close();
-    } catch (mysqli_sql_exception $e) {
-        // Catch any SQL exceptions and retrieve the error message
-        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    if ($insert_stmt->execute()) {
+        echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');
+        window.location.href='cart.php';
+        </script>";
+        exit();
+    } else {
+        echo "<script>alert('Lỗi xảy ra khi thêm sản phẩm vào giỏ hàng');
+        window.location.href='details.php?detail_id=". $_GET['item_id'] . "';
+        </script>";
+        exit();
     }
+    $insert_stmt->close();
 }
+
 print_r($_SESSION['cart']);
+
 ?>

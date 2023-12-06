@@ -133,7 +133,7 @@ session_start();
 				</li>
 
 				<li>
-					<a href="product.php" style="font-family: 'Open Sans', sans-serif;">Cửa hàng</a>
+					<a href="product.php?category=0" style="font-family: 'Open Sans', sans-serif;">Cửa hàng</a>
 				</li>
 
 				<li>
@@ -158,7 +158,7 @@ session_start();
 					<button class="flex-c-m trans-04" type="submit">
 						<i class="zmdi zmdi-search"></i>
 					</button>
-					<input class="plh3" type="text" name="search" id="searchInput" placeholder="Search...">
+					<input class="plh3" type="text" name="search" id="searchInput" placeholder="Tìm kiếm">
 				</form>
 
 				<script>

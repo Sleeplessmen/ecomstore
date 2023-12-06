@@ -107,7 +107,7 @@
                   <a href="profile.php" class="btn btn-success btn-flat" style="font-family: 'Open Sans', sans-serif;">Thông tin cá nhân</a>
                 </div>
                 <div class="pull-right">
-                  <a href="logout.php" class="btn btn-danger btn-flat" style="font-family: 'Open Sans', sans-serif;">Đăng xuất</a>
+                  <a href="admin_partials/logout.php" class="btn btn-danger btn-flat" style="font-family: 'Open Sans', sans-serif;">Đăng xuất</a>
                 </div>
               </li>
             </ul>

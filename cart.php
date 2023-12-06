@@ -66,7 +66,7 @@ include ("partials/head.php")
 									<!-- cart update quantity-->
 									<form action="cartupdate.php" method="post">
 										<input style="width: 50px; margin: auto; font-family: 'Open Sans', sans-serif;" class="mtext-104 cl3 text-center bg8"
-											type="number" min="0" name="quantity" value="<?php echo $value['quantity']; ?>">
+											type="number" min="1" name="quantity" value="<?php echo $value['quantity']; ?>">
 										<input type="hidden" name="item_id" value="<?php echo $value['item_id']; ?>">
 									</form>
 														
