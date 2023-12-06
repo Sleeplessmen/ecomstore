@@ -42,7 +42,7 @@
         </li>
 
         <li>
-          <a href="analystic.php">
+          <a href="">
             <i class="fa fa-bar-chart"></i> <span  style="font-family: 'Open Sans', sans-serif;">Thống kê</span>
           </a>
         </li>
