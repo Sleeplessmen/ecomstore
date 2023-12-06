@@ -26,10 +26,16 @@ if ($password == $confirmpassword) {
                 VALUES ('$email', '$hashedPassword', '$phone', '$currentDateTime', '$currentDateTime')";
         $connect->query($sql);
 
+        $stmt = $connect->prepare("SELECT * FROM customers WHERE customerUsername = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $final = $res->fetch_assoc();
+
         session_start();
-        $_SESSION['customer_id'] = $email;
+        $_SESSION['customer_id'] = $final['customerID'];
         // $_SESSION['customer_phone'] = $phone;
-        $_SESSION['customer_username'] = $hashedPassword; // Store hashed password in session (not recommended, see note below)
+        $_SESSION['customer_username'] = $email; // Store hashed password in session (not recommended, see note below)
         // Redirect to customerforms.php
         header('location: ../index.php');
     } else {
