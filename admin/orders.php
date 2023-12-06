@@ -26,15 +26,16 @@ include("admin_partials/head.php");
 
             <!-- Main Content -->
             <section class="content">
-                <p><a href="orders.php" class="btn btn-success" style="font-family: 'Open Sans', sans-serif;">Xem tất cả đơn hàng</a><br></p>
-                <h3 style="font-family: 'Open Sans', sans-serif;">Đơn hàng gần đây</h3>
+                <!-- <p><a href="orders.php" class="btn btn-success" style="font-family: 'Open Sans', sans-serif;">Xem tất cả đơn hàng</a><br></p>
+                <h3 style="font-family: 'Open Sans', sans-serif;">Đơn hàng gần đây</h3> -->
 
                 <div class="row">
                     <div class="col-md-12">
                         <?php
                         include('../partials/connect.php');
-                        $sql = "SELECT o.orderID, c.customerUsername, o.status, o.total_amount, o.created_at FROM orders o
-                        INNER JOIN customers c ON c.customerID = o.customerID";
+                        $sql = "SELECT o.orderID, c.customerUsername, o.status, o.total_amount, o.created_at 
+                                FROM orders o
+                                INNER JOIN customers c ON c.customerID = o.customerID";
                         $stmt = $connect->prepare($sql);
                         $stmt->execute();
                         $result = $stmt->get_result();
